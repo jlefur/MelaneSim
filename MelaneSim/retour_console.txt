@@ -1,0 +1,31 @@
+C_ContextCreator.build(): console is backed up in retour_console.txt
+C_ContextCreator.build(): 11 random number generators initialized
+C_ContextCreator.build(): Initialized time and space converter class with the ground manager 
+A_Protocol.constructor(): simulation starts at 01 janvier 1999
+A_Protocol() raster: data_raster/Zoom_003_15_09.2016/landcover.txt
+C_ReadRaster.txtRasterLoader(): width = 3  height = 3
+C_Landscape: ASCII grid
+C_Landscape: dimensions dim-ucell: width = 3 height = 3
+C_Landscape: Initialized empty grid of containers
+C_Landscape: dimensions gridValueLayer: [3.0, 3.0]
+C_Landscape(): dimensions continuous space:[3.0, 3.0]
+C_Landscape(): 1000.0 metres in one cell
+
+38;38;38;
+41;38;38;
+41;41;38;
+C_LandscapeSahelianSavanna(): sahelian savanna initialized
+A_Protocol(); identifying land plots ...
+C_Landscape.identifyAffinityLandPlots(): 2 land plot(s) initialized
+A_Protocol(): Initialized visible AGENT class with their landscape 
+C_Chronogram.C_Chronogram() Chronogramme file name : 20170517_GerbilEventsJunk.3a.jlf.csv
+C_Chronogram.constructor(): 182 events loaded in memory
+C_ProtocolFossorial.init(): 0(asked: 0) burrows created
+C_ProtocolFossorial.init(): Population of 0 fossorial rodents created and positioned randomly in burrow systems
+A_Protocol.initProtocol(): 3 inspectors defined: 
+A_Protocol.recordHeadersInFile(): Tick;Date;objects;PopSize;SexRatio;meanFemaleDispersal;meanMaleDispersal;maxFemaleDispersal;maxMaleDispersal;dispersedRodents;nbBirth;nbDeath;tick;NbBurrows;wanderers(%);tick;Shrubs Biomass;Crops Biomass;Grasses Biomass;Average Precipitation;NumRun
+C_ContextCreator.build(): protocol GERBIL_PROTOCOL selected
+C_ContextCreator.build(): Building the context ended: 66 items
+RUNNING ...
+C_Style2dAffinityType(): colormap not found; creating colormap Gerbil landcover: 21 colors identified
+C_Style2dAffinityType(): colormap not found; creating colormap Gerbil landcover: 21 colors identified

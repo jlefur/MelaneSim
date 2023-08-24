@@ -1,0 +1,17 @@
+Ceci est le modèle MelaneSim. Pout toute question contacter jean.lefur@ird.fr
+
+le dépot melanesim contient toute l'application
+Le modèle fonctionne sous Eclipse avec la plate-forme Repast-Simphony version 2.7 (https://github.com/Repast/repast.simphony/releases/tag/v2.7.0)
+installer Repast-Simphony-2.7-win64.exe - l'exécutable installe aussi Eclipse
+
+
+Il faut auparavant configurer le lancement: aller dans le menu run configuration puis configurer une application SimMastoModel avec les paramètres suivants: 
+	* main class: repast.simphony.runtime.RepastMain
+	* Program arguments: "${workspace_loc:SIMmasto_0}/SIMmasto_0.rs"
+	* VM arguments: -Xms4096M
+
+Pour le lancement :
+     - executer d'abord le code java C_ChooseProtocolCoral qui se trouve dans le package melanesim. 
+       L'application vous permet de choisir le protocole à configurer 
+       (il modifie les fichiers scenario.xml et parameters.xml dans le dossier MelaneSim.rs).
+     - executer ensuite le modele MelaneSim model.
