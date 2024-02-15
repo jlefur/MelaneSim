@@ -40,6 +40,7 @@ public interface I_ConstantString {
 	public final String CONSOLE_OUTPUT_FILE = "retour_console.txt";
 	public final String CSV_PATH = "data_csv";
 	public final String RASTER_PATH_RODENTS = "data_raster/rodents/";
+	public final String RASTER_PATH_MELANESIA = "data_raster/melanesia/";
 	public final String OUTPUT_PATH = "data_output/";
 	public final String REPAST_PATH = "MelaneSim.rs/";
 	public final String EVENT_VALUE2_FIELD_SEPARATOR = ":";// used when event value2 is a list

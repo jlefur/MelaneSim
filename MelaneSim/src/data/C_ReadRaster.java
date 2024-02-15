@@ -93,6 +93,7 @@ public class C_ReadRaster implements I_ConstantString {
 					colorMap = new HashMap<Integer, Color>();
 					// we will use 256 grey level
 					for (int i = 0; i < 256; i++) {
+						System.out.println(i + "ème gris Type 10: " + colorMap.get(i));
 						colorMap.put(i, new Color(i, i, i));
 					}
 					break;
@@ -125,7 +126,7 @@ public class C_ReadRaster implements I_ConstantString {
 				for (int j = 0; j < matriceLue[0].length; j++) {
 					Object tab = null;
 					Object dataElement = rasterLu.getDataElements(i, j, tab);
-					// System.out.println(o.getClass().getCanonicalName());
+//					 System.out.println(o.getClass().getCanonicalName());
 					rasterLu.getSampleModel().getDataType();
 					if (dataElement != null && dataElement instanceof byte[]) {
 						byte[] tab_byte = (byte[]) dataElement;

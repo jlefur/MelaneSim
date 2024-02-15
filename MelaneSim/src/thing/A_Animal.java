@@ -50,6 +50,7 @@ public abstract class A_Animal extends A_Organism implements I_ConstantNumeric {
 		String sex = "+F:";
 		if (testMale()) sex = "-M:";
 		this.setMyName(sex + this.retrieveMyName());
+		this.myHome=this.currentSoilCell;
 	}
 	//
 	// OVERRIDEN METHOD
