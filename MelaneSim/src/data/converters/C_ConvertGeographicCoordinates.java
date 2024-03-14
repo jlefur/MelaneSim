@@ -7,15 +7,15 @@ import java.util.Map;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
-import data.constants.I_ConstantMusTransport;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantMusTransport;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 
 /** Utility to convert from geographic coordinates to meters and compute distances in meter from the raster origin? <br>
  * Calculation depends on the raster used
  * @author author Moussa Sall, oct.2015 <br>
  *         source: http://geodesie.ign.fr/contenu/fichiers/documentation/pedagogiques/TransformationsCoordonneesGeodesiques.pdf */
-public class C_ConvertGeographicCoordinates implements I_ConstantString {
+public class C_ConvertGeographicCoordinates implements I_ConstantStringRodents {
 	//
 	// CONSTANTS
 	//

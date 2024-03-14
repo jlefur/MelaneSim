@@ -1,8 +1,8 @@
 package thing.ground.landscape;
 
+import data.constants.rodents.I_ConstantTransportation;
 import repast.simphony.context.Context;
 import thing.ground.C_SoilCellGraphed;
-import data.constants.I_ConstantTransportation;
 
 /** Tag C_soilCellGraphed inside or outside domain Author: PAM 2013, rev. jlf 10.2015 */
 public class C_LandscapeCountry extends C_LandscapeNetwork implements I_ConstantTransportation {

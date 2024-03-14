@@ -2,9 +2,9 @@
 package thing.ground;
 import java.util.TreeSet;
 
+import data.constants.rodents.I_ConstantTransportation;
 import thing.C_HumanCarrier;
 import thing.ground.landscape.C_Landscape;
-import data.constants.I_ConstantTransportation;
 
 /** A region stands for a landplot (sufficiently large area) that can encompass(contain) at least one C_City
  * @author Jean Le Fur 08.09.2014 */

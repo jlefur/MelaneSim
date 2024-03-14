@@ -20,7 +20,7 @@ import com.vividsolutions.jts.geom.Coordinate;
 import data.C_Chronogram;
 import data.C_Event;
 import data.C_Parameters;
-import data.constants.I_ConstantMusTransport;
+import data.constants.rodents.I_ConstantMusTransport;
 import data.converters.C_ConvertGeographicCoordinates;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;

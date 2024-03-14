@@ -1,4 +1,4 @@
-package data.constants;
+package data.constants.rodents;
 
 import java.util.HashMap;
 import java.util.Map;

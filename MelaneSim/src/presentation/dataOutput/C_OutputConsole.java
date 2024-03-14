@@ -10,9 +10,9 @@ import java.io.PrintStream;
 
 import javax.swing.JTextArea;
 
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 /** @author Audrey Realini - 2011 All that appears in the console is backed up in the file */
-public class C_OutputConsole implements Runnable, I_ConstantString {
+public class C_OutputConsole implements Runnable, I_ConstantStringRodents {
 	private File file;
 	private JTextArea area;
 	private InputStreamReader reader;

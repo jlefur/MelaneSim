@@ -12,7 +12,7 @@ import thing.dna.C_XsomePairMicrosat;
 import thing.dna.C_XsomePairSexual;
 
 /** @author M Sall 2020 */
-public class C_GenomeBorrelia extends C_GenomeAnimalia implements data.constants.I_ConstantString {
+public class C_GenomeBorrelia extends C_GenomeAnimalia implements data.constants.rodents.I_ConstantStringRodents {
 	// Maplocs and locus of the chromosome Pair:
 	protected static final int numGenesXsomeAmniota = 2;
 	protected C_ChromosomePair xsomePairAmniota;

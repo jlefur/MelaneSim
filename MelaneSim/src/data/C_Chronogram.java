@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import data.constants.I_ConstantGerbil;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_Calendar;
 import melanesim.protocol.A_Protocol;
 /** Builds a data chrono from a CSV events file
  * @author pamboup 21/06/2013, rev JLF 08.2014 */
-public class C_Chronogram implements I_ConstantString, I_ConstantNumeric, I_ConstantGerbil {
+public class C_Chronogram implements I_ConstantStringRodents, I_ConstantNumeric, I_ConstantGerbil {
     //
     // FIELDS
     //

@@ -1,5 +1,5 @@
 /* This source code is licensed under a BSD licence as detailed in file SIMmasto_0.license.txt */
-package data.constants;
+package data.constants.rodents;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -11,7 +11,7 @@ import java.util.TreeSet;
  * - Almost all packages implement this interface.
  * @see I_ConstantNumeric
  * @author J.Le Fur 08.2014, rev. JLF 11.2014, 02.2021 */
-public interface I_ConstantString {
+public interface I_ConstantStringRodents {
 
 	// DESIRES
 	public final String FEED = "FEED";

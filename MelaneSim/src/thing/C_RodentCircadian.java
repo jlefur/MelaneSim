@@ -3,8 +3,8 @@ package thing;
 import java.util.Calendar;
 import java.util.TreeSet;
 
+import data.constants.rodents.I_ConstantDodel;
 import thing.dna.I_DiploidGenome;
-import data.constants.I_ConstantDodel;
 import melanesim.protocol.A_Protocol;
 
 /** Define rodent agents that account for hourly change of their environment (e.g., suspend activity during daytime)<br>

@@ -1,4 +1,4 @@
-package data.constants;
+package data.constants.rodents;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 /** Gathers all variables since software specifications requires no numbers in the java sources <br>
  * PE: Petite Emprise, ME, Moyenne Emprise, TPE: Très Petite Emprise
  * @author Le Fur & Sall 09.2015, rev. JLF 02.2021 */
-public interface I_ConstantGerbil extends I_ConstantString {
+public interface I_ConstantGerbil extends I_ConstantStringRodents {
 
 	// CHRONOGRAM FILE NAME
 	// public static final String CHRONO_FILENAME = "20151029_GerbilEventsOfficiel.2a.jlf.csv";

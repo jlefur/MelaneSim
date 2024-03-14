@@ -8,8 +8,8 @@ import java.util.TreeSet;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
-import data.constants.I_ConstantCage;
-import data.constants.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantCage;
+import data.constants.rodents.I_ConstantNumeric;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.display.C_Background;

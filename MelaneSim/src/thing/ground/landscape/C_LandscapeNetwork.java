@@ -16,8 +16,7 @@ import thing.ground.C_Region;
 import thing.ground.C_SoilCell;
 import thing.ground.C_SoilCellGraphed;
 import data.C_Parameters;
-//import data.constants.I_ConstantString;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 import melanesim.util.C_Graph;
 
@@ -52,8 +51,8 @@ public class C_LandscapeNetwork extends C_Landscape {
 		this.graphedValueLayer = new GridValueLayer(proj_gridvalue2, true,
 				new repast.simphony.space.grid.WrapAroundBorders(), dimension_Ucell.width, dimension_Ucell.height);
 		this.graphList = new ArrayList<C_Graph>();
-		this.graphTypes = I_ConstantString.GRAPH_TYPES;// null value
-		this.areaTypes = I_ConstantString.AREA_TYPES;// null value
+		this.graphTypes = I_ConstantStringRodents.GRAPH_TYPES;// null value
+		this.areaTypes = I_ConstantStringRodents.AREA_TYPES;// null value
 		this.grid = new C_SoilCellGraphed[(int) dimension_Ucell.width][(int) dimension_Ucell.height];
 		for (int i = 0; i < this.dimension_Ucell.width; i++) {
 			for (int j = 0; j < this.dimension_Ucell.height; j++) {

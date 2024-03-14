@@ -8,10 +8,10 @@ import repast.simphony.valueLayer.ValueLayer;
 import repast.simphony.visualizationOGL2D.ValueLayerStyleOGL;
 import thing.ground.landscape.C_Landscape;
 import data.C_Parameters;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 
-public class C_Style2dAffinityType implements ValueLayerStyleOGL, I_ConstantNumeric, I_ConstantString {
+public class C_Style2dAffinityType implements ValueLayerStyleOGL, I_ConstantNumeric, I_ConstantStringRodents {
 	protected ValueLayer layer;// the layer to represent
 
 	Map<Integer, Color> colorMap;// the colormap is used to associate a color at each value of the layer

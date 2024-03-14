@@ -12,7 +12,7 @@ import thing.ground.A_Container;
 import thing.ground.C_SoilCell;
 import thing.ground.C_SoilCellSavanna;
 import data.C_Parameters;
-import data.constants.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantGerbil;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.protocol.A_Protocol;
 /** Vegetation objects grow depending on rain intensity.

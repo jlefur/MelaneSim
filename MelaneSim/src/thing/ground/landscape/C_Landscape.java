@@ -17,7 +17,7 @@ import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
 import data.C_ReadRaster;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.epiphyte.C_InspectorOrnithodorosSonrai;
@@ -51,7 +51,7 @@ import thing.ground.I_Container;
  * @author Baduel 2009.04, Le Fur 2009.12, Longueville 2011.02, Le Fur 02.2011, 07.2012, 04.2015<br>
  *         rev. JLF 10.2015, 11.2015 - was formerly C_Raster <br>
  *         TODO JLF 2020.04 Should be normally in ground package */
-public class C_Landscape implements I_ConstantString {
+public class C_Landscape implements I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

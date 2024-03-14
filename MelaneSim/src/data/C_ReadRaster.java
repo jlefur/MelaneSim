@@ -18,14 +18,14 @@ import java.util.StringTokenizer;
 
 import javax.imageio.ImageIO;
 
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import thing.ground.landscape.C_Landscape;
 
 /** Two utilities to read either an ASCII or bitmap raster and return a grid in SimMasto format (the image must be in grey levels
  * or in 256 or less)
  * @see C_Landscape
  * @author Quentin Baduel, 2008, rev. JLF 10.2015 */
-public class C_ReadRaster implements I_ConstantString {
+public class C_ReadRaster implements I_ConstantStringRodents {
 	/** Downloads grid in ASCII text format : 1st line "DSAA" 2nd line number of rows 3rd line number of columns 4th line min and
 	 * max values remaining: line 0: column 0 to j-1 (delimiter blank space) line i line i-1
 	 * @param url

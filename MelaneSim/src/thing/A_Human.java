@@ -1,12 +1,12 @@
 package thing;
 import thing.dna.I_DiploidGenome;
 import thing.ground.I_Container;
-import data.constants.I_ConstantString;
-import data.constants.I_ConstantTransportation;
+import data.constants.rodents.I_ConstantStringRodents;
+import data.constants.rodents.I_ConstantTransportation;
 
 /** A human owns a room.
  * @author Sall 02-10-2018,rev. J.Le Fur 06.2022 */
-public abstract class A_Human extends A_Amniote implements I_ConstantString, I_ConstantTransportation {
+public abstract class A_Human extends A_Amniote implements I_ConstantStringRodents, I_ConstantTransportation {
 	//
 	// CONSTRUCTOR
 	//

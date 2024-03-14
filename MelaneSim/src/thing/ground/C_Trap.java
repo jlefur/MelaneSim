@@ -8,7 +8,7 @@ import thing.I_SituatedThing;
 
 /** A trap may be opened, closed, full; it can catch rodent
  * @author J.Le Fur and M.Diakhate, july 2013, rev. 27.09.13 */
-public class C_Trap extends C_BurrowSystem implements data.constants.I_ConstantBandia {
+public class C_Trap extends C_BurrowSystem implements data.constants.rodents.I_ConstantBandia {
 	//
 	// FIELD
 	//

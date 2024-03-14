@@ -4,8 +4,8 @@ import java.text.ParseException;
 import java.util.Date;
 
 import presentation.dataOutput.C_Information;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_Calendar;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
@@ -13,7 +13,7 @@ import melanesim.protocol.A_Protocol;
 /** WORK IN PROGRESS Basic structure to communicate between worlds (aims to be related with C_Information ?)
  * @see C_Information
  * @author Jean Le Fur (lefur@ird.fr) Version 04/06/2014, rev.09.2014, JLF & M.Sall 11.2015 */
-public class C_Event implements Comparable<C_Event>, I_ConstantNumeric, I_ConstantString {
+public class C_Event implements Comparable<C_Event>, I_ConstantNumeric, I_ConstantStringRodents {
     //
     // FIELDS
     //

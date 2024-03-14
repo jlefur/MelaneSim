@@ -34,8 +34,8 @@ import com.vividsolutions.jts.geom.Coordinate;
 import data.C_Chronogram;
 import data.C_Event;
 import data.C_Parameters;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.C_Calendar;
 import melanesim.C_ContextCreator;
@@ -43,7 +43,7 @@ import melanesim.util.C_VariousUtilities;
 import melanesim.util.C_sound;
 /** Master class for the various melanesim.protocol of the SimMasto platform
  * @author Jean Le Fur & Pape Adama Mboup 07.2012, rev. JLF 02.2013, 08.2014, 10.2014, 03.2021 */
-public abstract class A_Protocol implements I_Protocol, I_ConstantString, I_ConstantNumeric {
+public abstract class A_Protocol implements I_Protocol, I_ConstantStringRodents, I_ConstantNumeric {
 	//
 	// FIELDS
 	//

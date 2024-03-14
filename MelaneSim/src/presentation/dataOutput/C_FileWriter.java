@@ -8,9 +8,9 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import data.C_Parameters;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 
-public class C_FileWriter implements I_ConstantString {
+public class C_FileWriter implements I_ConstantStringRodents {
 	/** the directory within which output files are placed */
 	private String $DOSSIER = "";
 	private String fileName = "";

@@ -2,7 +2,7 @@ package presentation.epiphyte;
 
 import java.util.TreeSet;
 
-import data.constants.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantGerbil;
 import melanesim.protocol.A_Protocol;
 import repast.simphony.essentials.RepastEssentials;
 import thing.C_Vegetation;

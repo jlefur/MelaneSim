@@ -16,12 +16,12 @@ import thing.I_SituatedThing;
 import thing.ground.C_City;
 import thing.ground.C_LandPlot;
 import data.C_Parameters;
-import data.constants.I_ConstantCentenal;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantCentenal;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 /** From case study number 3 - Senegal Centenal M2 P.A.Mboup
  * @author J.Le Fur & Mboup 07/2012, rev. JLF 09.2014 */
-public class C_InspectorTransportation extends A_Inspector implements I_ConstantString, I_ConstantCentenal {
+public class C_InspectorTransportation extends A_Inspector implements I_ConstantStringRodents, I_ConstantCentenal {
 	//
 	// FIELDS
 	//

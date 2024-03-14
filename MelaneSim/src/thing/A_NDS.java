@@ -1,7 +1,7 @@
 /* This source code is licensed under a BSD licence as detailed in file SIMmasto_0.license.txt */
 package thing;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.C_ContextCreator;
 import melanesim.util.C_VariousUtilities;
@@ -10,7 +10,7 @@ import repast.simphony.essentials.RepastEssentials;
 /** The root class of most business objects "A_" means abstract & "NDS" means Nearly Decomposable System (See Simon, 1962)
  * @author Jean Le Fur, kyle wagner, Quentin Baduel, Jean-Emmanuel Longueville Version 2.1, 17.feb.2011, rev. JLF 09-10.2014 */
 public abstract class A_NDS implements I_CyberneticThing, I_LivingThing, Comparable<A_NDS>, I_ConstantNumeric,
-		I_ConstantString {
+		I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

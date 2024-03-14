@@ -22,7 +22,7 @@ import thing.ground.I_Container;
 
 /** initialize the simulation and manages the inputs coming from the csv events file
  * @author Diakhate & Le Fur july 2013, 08.2014 */
-public class C_ProtocolBandia extends A_ProtocolFossorial implements data.constants.I_ConstantBandia {
+public class C_ProtocolBandia extends A_ProtocolFossorial implements data.constants.rodents.I_ConstantBandia {
 
 	protected C_InspectorGenetic geneticInspector;
 	protected C_InspectorCMR C_InspectorCMR;

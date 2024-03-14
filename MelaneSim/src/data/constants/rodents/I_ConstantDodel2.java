@@ -1,11 +1,11 @@
-package data.constants;
+package data.constants.rodents;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /** Gathers all numbered variables since software specifications requires no numbers in the java sources
  * @author M. Sall 10.2018 */
-public interface I_ConstantDodel2 extends I_ConstantString {
+public interface I_ConstantDodel2 extends I_ConstantStringRodents {
 	// public static String CHRONO_FILENAME = "20201110_Dodel2Events.2d.ms.csv";
 	// public static String CHRONO_FILENAME = "20201209_Dodel2Events.2d.ms.csv"; // Chrono whitout humans
 	// public static String CHRONO_FILENAME = "20210518_Dodel2Events.2d.ms.jlf.mg.csv";

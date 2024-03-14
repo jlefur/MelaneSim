@@ -105,8 +105,8 @@ public class C_HumanWalker extends A_HumanUrban {
 		if (this.pathWanderer.hasToSetNextNode(this.currentSoilCell)) this.setNextNode();
 		super.actionMoveToDestination();
 		// if (C_Parameters.VERBOSE)
-//		 A_VisibleAgent.myLandscape.getValueLayer().set(10, ((C_SoilCellUrban) this.currentSoilCell)
-//		 .retrieveLineNo(), this.currentSoilCell.retrieveColNo());// @@vert boutique
+		 A_VisibleAgent.myLandscape.getValueLayer().set(10, ((C_SoilCellUrban) this.currentSoilCell)
+		 .retrieveLineNo(), this.currentSoilCell.retrieveColNo());// @@vert boutique
 	}
 
 	/** Remove references to targetPoint_Umeter discards pathwanderer, JLF 02.2022 */

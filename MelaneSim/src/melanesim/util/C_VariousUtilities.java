@@ -17,7 +17,7 @@ import com.vividsolutions.jts.geom.Coordinate;
 
 import cern.jet.random.engine.RandomEngine;
 import data.C_Parameters;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 import repast.simphony.random.RandomHelper;
 import thing.A_Animal;
@@ -37,7 +37,7 @@ import thing.dna.variator.I_Recombinator;
 import thing.ground.A_Container;
 import thing.ground.C_SoilCell;
 
-public class C_VariousUtilities implements I_ConstantString {
+public class C_VariousUtilities implements I_ConstantStringRodents {
 	//
 	// CONSTRUCTOR
 	//

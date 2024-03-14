@@ -11,7 +11,7 @@ import thing.dna.species.plants.C_GenomeSpermatophyta;
 import thing.ground.C_SoilCell;
 import thing.ground.C_SoilCellSavanna;
 import data.C_Parameters;
-import data.constants.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantGerbil;
 import data.converters.C_ConvertTimeAndSpace;
 /** Vegetation objects grow depending on rain intensity.
  * @author M.Sall 10.2015, rev. JLF&MS 03.2016, 05.2017 */

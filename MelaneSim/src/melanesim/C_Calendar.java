@@ -7,7 +7,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import data.constants.I_ConstantDodel;
+import data.constants.rodents.I_ConstantDodel;
 import data.converters.C_ConvertTimeAndSpace;
 
 /** Time manager: in multiscale contexts, several protocols with their own calendar may run concurrently<br>

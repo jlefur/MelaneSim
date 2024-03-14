@@ -5,14 +5,14 @@ import java.util.TreeSet;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import data.constants.I_ConstantGerbil;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertGeographicCoordinates;
 import data.converters.C_ConvertRainFiles;
 /** Extract the input raster files (rain series or landcover) of a zoom or TPE ('très petite emprise') landscape at the desired size
  * from the reference grid of ME ('moyenne emprise') and save the resulting files / Used in Gerbil protocol only
  * @author M.Sall & J.Le Fur 12.2015, rev. JLF&MS 03.2016 */
-public class C_ZoomExtractor implements I_ConstantString, I_ConstantGerbil {
+public class C_ZoomExtractor implements I_ConstantStringRodents, I_ConstantGerbil {
 	//
 	// METHODS
 	//

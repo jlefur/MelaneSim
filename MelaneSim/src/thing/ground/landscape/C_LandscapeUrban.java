@@ -11,7 +11,7 @@ import java.util.TreeSet;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
-import data.constants.I_ConstantDodel2;
+import data.constants.rodents.I_ConstantDodel2;
 import melanesim.protocol.A_Protocol;
 import repast.simphony.context.Context;
 import repast.simphony.space.continuous.NdPoint;

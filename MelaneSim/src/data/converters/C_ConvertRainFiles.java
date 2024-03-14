@@ -6,12 +6,12 @@ import java.util.TreeSet;
 
 import presentation.dataOutput.C_FileWriter;
 import data.C_ReadRaster;
-import data.constants.I_ConstantGerbil;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantStringRodents;
 
 /** Read the rain bitmaps, rescale colors and save the grid in ASCII
  * @author M.Sall 10.2015, rev. MS&JLF 04.2016 */
-public class C_ConvertRainFiles implements I_ConstantString, I_ConstantGerbil {
+public class C_ConvertRainFiles implements I_ConstantStringRodents, I_ConstantGerbil {
     //
     // METHODS
     //

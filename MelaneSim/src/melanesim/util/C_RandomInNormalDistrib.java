@@ -2,7 +2,7 @@ package melanesim.util;
 
 import java.util.Random;
 
-import data.constants.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantNumeric;
 
 /** An extension of java.util.Random, which adds methods to generate random numbers in normal distribution given a specific mean
  * or both a mean and a standard deviation.

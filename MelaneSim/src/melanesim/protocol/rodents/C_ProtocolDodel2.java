@@ -18,7 +18,7 @@ import data.C_Event;
 import data.C_Parameters;
 import data.C_ReadRaster;
 import data.C_ReadWriteFile;
-import data.constants.I_ConstantDodel2;
+import data.constants.rodents.I_ConstantDodel2;
 import data.converters.C_ConvertGeographicCoordinates;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;

@@ -17,8 +17,8 @@ import javax.swing.ScrollPaneConstants;
 
 import bsh.util.JConsole;
 import data.C_Parameters;
-import data.constants.I_ConstantImagesNames;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantImagesNames;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.epiphyte.C_InspectorFossorialRodents;
@@ -32,7 +32,7 @@ import repast.simphony.userpanel.ui.UserPanelCreator;
 
 /** Tableau de bord de la simulation. Contient la date de la simulation (à chaque tick), des méteurs et un retour de la console.
  * @author A Realini 2011, rev. Le Fur feb., jul. 2013, may 2018 */
-public class C_UserPanel extends JPanel implements UserPanelCreator, I_ConstantString, I_ConstantImagesNames {
+public class C_UserPanel extends JPanel implements UserPanelCreator, I_ConstantStringRodents, I_ConstantImagesNames {
     //
     // FIELDS
     //

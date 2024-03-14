@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.epiphyte.C_InspectorHybrid;
@@ -25,7 +25,7 @@ import presentation.epiphyte.C_InspectorHybrid;
  * @author Jean Le Fur, lefur@ird.fr 2011 adapted from PulseRateGenome kyle wagner, elyk@acm.org; Aurore Comte 2012 Version 2,
  *         01.2011/09.2011/01.2012/03.2012 */
 
-public abstract class C_GenomeEucaryote extends A_GenomeLuca implements I_DiploidGenome, I_ConstantNumeric, I_ConstantString {
+public abstract class C_GenomeEucaryote extends A_GenomeLuca implements I_DiploidGenome, I_ConstantNumeric, I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

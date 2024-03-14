@@ -1,4 +1,4 @@
-package data.constants;
+package data.constants.rodents;
 
 /** Numbered variables bound to ProtocolCage since SimMasto specification requires no numbers in the java sources
  * @author Le Fur 09.2017 */

@@ -4,7 +4,7 @@ import repast.simphony.engine.environment.RunState;
 import repast.simphony.essentials.RepastEssentials;
 import thing.I_SituatedThing;
 import data.C_Parameters;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 
@@ -12,7 +12,7 @@ import melanesim.protocol.A_Protocol;
  * indicators file.
  * @author A Realini 05.2011 / J.LeFur 09.2011, 07.2012, 01.2013 */
 
-public abstract class A_Inspector implements Comparable<A_Inspector>, I_Inspector, I_ConstantString {
+public abstract class A_Inspector implements Comparable<A_Inspector>, I_Inspector, I_ConstantStringRodents {
 
 	protected String indicatorsHeader;
 	protected String indicatorsValues;

@@ -25,7 +25,7 @@ import thing.ground.landscape.C_LandscapeCountry;
 import thing.ground.landscape.C_LandscapeNetwork;
 import data.C_Event;
 import data.C_Parameters;
-import data.constants.I_ConstantTransportation;
+import data.constants.rodents.I_ConstantTransportation;
 import melanesim.util.C_Graph;
 
 /** Initialize the simulation and manage the inputs coming from the events file.csv

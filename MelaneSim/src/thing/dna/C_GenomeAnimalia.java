@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Map;
 /** Animals are mobile and speed is their life trait
  * @author J.Le Fur 2017 */
-public class C_GenomeAnimalia extends C_GenomeEucaryote implements data.constants.I_ConstantString {
+public class C_GenomeAnimalia extends C_GenomeEucaryote implements data.constants.rodents.I_ConstantStringRodents {
 	protected static final ArrayList<Double> SPEED_MAPLOCS = new ArrayList<Double>(Arrays.asList(17.));
 	protected static final ArrayList<Double> SENSING_MAPLOCS = new ArrayList<Double>(Arrays.asList(18.));
 	protected static final ArrayList<Double> MAX_AGE_MAPLOCS = new ArrayList<Double>(Arrays.asList(19.));

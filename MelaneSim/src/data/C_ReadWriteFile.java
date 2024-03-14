@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import melanesim.protocol.A_Protocol;
 
-public class C_ReadWriteFile implements data.constants.I_ConstantString {
+public class C_ReadWriteFile implements data.constants.rodents.I_ConstantStringRodents {
 	/** Open a buffer reader for a file
 	 * @param url
 	 * @param fileName (with extension) */

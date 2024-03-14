@@ -3,7 +3,8 @@ package thing.ground.landscape;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import data.constants.I_ConstantDodel2;
+
+import data.constants.rodents.I_ConstantDodel2;
 import melanesim.util.C_Graph;
 import repast.simphony.context.Context;
 import thing.ground.C_LandPlot;

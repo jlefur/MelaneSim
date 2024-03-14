@@ -3,13 +3,13 @@ package thing;
 
 import java.util.TreeSet;
 
+import data.constants.rodents.I_ConstantCage;
 import thing.dna.I_DiploidGenome;
 import thing.dna.species.rodents.C_GenomeMastoErythroleucus;
 import thing.dna.species.rodents.C_GenomeMastoNatalensis;
 import thing.dna.species.rodents.C_GenomeMastomys;
 import thing.ground.C_LandPlot;
 import thing.ground.C_SoilCell;
-import data.constants.I_ConstantCage;
 import melanesim.C_ContextCreator;
 
 /** Standard rodent only living in cage and not dying

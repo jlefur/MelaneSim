@@ -4,7 +4,7 @@ package thing.ground;
 import thing.C_HumanCarrier;
 import thing.C_Rodent;
 import data.C_Parameters;
-import data.constants.I_ConstantTransportation;
+import data.constants.rodents.I_ConstantTransportation;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.C_ContextCreator;
 /** A vehicle is an object owned by a human carrier. its coordinates are those of its owner. author J.Le Fur, Mboup 07/2012, rev jlf 03.2015 */

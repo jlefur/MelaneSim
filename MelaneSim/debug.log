@@ -86,3 +86,92 @@ Caused by: java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at com.jgoodies.binding.beans.PropertyAccessor.getValue(PropertyAccessor.java:160)
 	... 11 more
+FATAL [Thread-9] 2024-03-05 11:40:40,270 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1300.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at melanesim.protocol.A_Protocol$$FastClassByCGLIB$$73af8671.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 586
+	at melanesim.util.C_WallFollower.computeNewPositionWithTarget_Umeter(C_WallFollower.java:262)
+	at thing.C_RodentDomestic2.setNewRandomMove(C_RodentDomestic2.java:307)
+	at thing.A_Animal.actionForage(A_Animal.java:178)
+	at thing.C_RodentFossorial.actionForage(C_RodentFossorial.java:56)
+	at thing.C_RodentDomestic2.actionNoChoice(C_RodentDomestic2.java:247)
+	at thing.A_Animal.step_Utick(A_Animal.java:78)
+	at thing.A_Amniote.step_Utick(A_Amniote.java:91)
+	at thing.C_RodentDomestic2.step_Utick(C_RodentDomestic2.java:56)
+	at melanesim.protocol.A_Protocol.step_Utick(A_Protocol.java:129)
+	at melanesim.protocol.rodents.C_ProtocolDodel2.step_Utick(C_ProtocolDodel2.java:151)
+	... 10 more
+FATAL [Thread-32] 2024-03-05 18:37:14,535 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (584.0)
+com.jgoodies.binding.beans.PropertyAccessException: Failed to read an adapted Java Bean property.
+cause=java.lang.NullPointerException
+bean=null
+bean type=thing.C_RodentFossorial
+property name=myHome
+property type=java.lang.String
+property reader=public java.lang.String thing.A_Animal.getMyHome()
+	at com.jgoodies.binding.beans.PropertyAccessException.createReadAccessException(PropertyAccessException.java:92)
+	at com.jgoodies.binding.beans.PropertyAccessor.getValue(PropertyAccessor.java:162)
+	at com.jgoodies.binding.beans.BeanAdapter.getValue0(BeanAdapter.java:1149)
+	at com.jgoodies.binding.beans.BeanAdapter.access$500(BeanAdapter.java:288)
+	at com.jgoodies.binding.beans.BeanAdapter$SimplePropertyAdapter.fireChange(BeanAdapter.java:1434)
+	at repast.simphony.ui.probe.ProbeModel$ProbeBeanAdapter$SimplePropertyAdapter.fireChange(ProbeModel.java:64)
+	at repast.simphony.ui.probe.ProbeModel$ProbeBeanAdapter.fireChange(ProbeModel.java:52)
+	at repast.simphony.ui.probe.ProbeModel.update(ProbeModel.java:108)
+	at repast.simphony.ui.probe.Probe.update(Probe.java:76)
+	at repast.simphony.ui.probe.ProbeManager.update(ProbeManager.java:76)
+	at repast.simphony.ui.RSApplication.tickCountUpdated(RSApplication.java:608)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:60)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at thing.A_Animal.getMyHome(A_Animal.java:499)
+	at sun.reflect.GeneratedMethodAccessor54.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.jgoodies.binding.beans.PropertyAccessor.getValue(PropertyAccessor.java:160)
+	... 11 more
+WARN  [AWT-EventQueue-0] 2024-03-14 16:43:26,640 repast.simphony.scenario.AbstractActionLoader - Error attempting to load file 'C:\Users\lefurj\Documents\git\MelaneSim\MelaneSim\MelaneSim.rs\styles\repast.simphony.action.display_PNMC_plancton.xml'. Not loading the action from that file.
+java.io.FileNotFoundException: C:\Users\lefurj\Documents\git\MelaneSim\MelaneSim\MelaneSim.rs\styles\repast.simphony.action.display_PNMC_plancton.xml (Le fichier spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at repast.simphony.scenario.AbstractActionLoader.loadAction(AbstractActionLoader.java:34)
+	at repast.simphony.scenario.ScenarioFileLoader.createActions(ScenarioFileLoader.java:90)
+	at repast.simphony.scenario.ScenarioFileLoader.load(ScenarioFileLoader.java:66)
+	at repast.simphony.scenario.ScenarioLoader.load(ScenarioLoader.java:199)
+	at repast.simphony.ui.RSApplication.open(RSApplication.java:359)
+	at repast.simphony.ui.RSAppConfigurator.postWindowOpen(RSAppConfigurator.java:39)
+	at saf.core.ui.GUICreatorDelegate.runDisplay(GUICreatorDelegate.java:216)
+	at saf.core.ui.GUICreator$1.run(GUICreator.java:18)
+	at simphony.util.ThreadUtilities$Runner.run(ThreadUtilities.java:33)
+	at simphony.util.ThreadUtilities.runInEventThread(ThreadUtilities.java:47)
+	at saf.core.ui.GUICreator.runDisplay(GUICreator.java:16)
+	at repast.simphony.ui.RSUIPlugin$1.run(RSUIPlugin.java:101)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)

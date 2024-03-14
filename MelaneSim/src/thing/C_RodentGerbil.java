@@ -3,7 +3,7 @@ package thing;
 import java.util.TreeSet;
 
 import data.C_Parameters;
-import data.constants.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantGerbil;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.protocol.A_Protocol;
 import thing.dna.I_DiploidGenome;

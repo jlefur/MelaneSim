@@ -1,6 +1,6 @@
 package thing;
 
-import data.constants.I_ConstantDodel2;
+import data.constants.rodents.I_ConstantDodel2;
 import thing.dna.I_DiploidGenome;
 
 /** This class accounts for Tick .

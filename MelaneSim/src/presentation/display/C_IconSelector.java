@@ -8,8 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import data.C_Parameters;
-import data.constants.I_ConstantImagesNames;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantImagesNames;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 import thing.A_Amniote;
 import thing.A_Animal;
@@ -44,7 +44,7 @@ import thing.ground.C_Trap;
 
 /** Gestionnaire d'images / Icons may be either gif image files or geonetric icons
  * @author A Realini, rev. JLF 10.2015 */
-public class C_IconSelector implements I_ConstantString, I_ConstantImagesNames {
+public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImagesNames {
 
 	/** Charge une image
 	 * @param nomImage : le nom de l'image à charger */

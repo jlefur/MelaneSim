@@ -2,8 +2,8 @@ package melanesim;
 
 import cern.jet.random.engine.RandomEngine;
 import data.C_Parameters;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.protocol.A_Protocol;
 import melanesim.protocol.rodents.C_ProtocolBandia;
@@ -23,7 +23,7 @@ import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.random.RandomHelper;
 
 /** @author Baduel Quentin - 2009 multiple rev. Le Fur 2009-2012, 02.2013, 11.2015 */
-public class C_ContextCreator implements ContextBuilder<Object>, I_ConstantNumeric, I_ConstantString {
+public class C_ContextCreator implements ContextBuilder<Object>, I_ConstantNumeric, I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

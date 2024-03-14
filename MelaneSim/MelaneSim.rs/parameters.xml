@@ -6,24 +6,24 @@
 	<!-- COMMON INTER-PROTOCOLS -->
 	<!-- Time scale -->
 	<parameter name="TICK_UNIT_Ucalendar" displayName="0a/ Tick unit (ms,s,m,h,d,mon,y)"
-		type="java.lang.String" defaultValue="M" isReadOnly="false"
+		type="java.lang.String" defaultValue="H" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<parameter name="TICK_LENGTH_Ucalendar" displayName="0b/ Tick length"
-		type="java.lang.Integer" defaultValue="360" isReadOnly="false"
+		type="java.lang.Integer" defaultValue="3" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 	<parameter name="CELL_WIDTH_Ucm" displayName="0c/ nb centimeters in one pixel (default=exact scale)"
-		type="java.lang.Integer" defaultValue="1538" isReadOnly="false"
+		type="java.lang.Integer" defaultValue="748" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 
 	<!-- Switches -->
 	<parameter name="BLACK_MAP" displayName="0d/ BLACK map" type="boolean"
 		defaultValue="false" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
-	<parameter name="VERBOSE" displayName="0e/ more EVENTS on map and console"
+	<parameter name="VERBOSE" displayName="0e/ Display more EVENTS on map and console"
 		type="boolean" defaultValue="false" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
-	<parameter name="DISPLAY_MAP" displayName="0f/ MAP AND CAPTION above ground"
-		type="boolean" defaultValue="false" isReadOnly="false"
+	<parameter name="DISPLAY_MAP" displayName="0f/ Display CAPTION above ground (tip: unzoom)"
+		type="boolean" defaultValue="true" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
 	<parameter name="IMAGE" displayName="0g/ ICONS (display objects using icons)"
 		type="boolean" defaultValue="false" isReadOnly="false"
@@ -37,13 +37,13 @@
 		type="boolean" defaultValue="false" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
 	<parameter name="EXCLOS" displayName="1c/ Metapopulation(exclos)"
-		type="boolean" defaultValue="true" isReadOnly="false"
+		type="boolean" defaultValue="false" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
 	<parameter name="INIT_POP_SIZE" displayName="1d/ Initialization: Population size (indiv.)"
-		type="java.lang.Integer" defaultValue="444" isReadOnly="false"
+		type="java.lang.Integer" defaultValue="111" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 	<parameter name="NUMBER_OF_BURROW_SYSTEM" displayName="1e/ Initialization: Nb burrow systems"
-		type="java.lang.Integer" defaultValue="50" isReadOnly="false"
+		type="java.lang.Integer" defaultValue="4" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 
 	<!-- reproduction (months using january=00.) -->
@@ -55,7 +55,7 @@
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 
 	<parameter name="RASTER_FILE" displayName="1h/grid filename"
-		type="java.lang.String" defaultValue="20170222-ChizeCrops.2a.txt" isReadOnly="false"
+		type="java.lang.String" defaultValue="ChizeCrops.1c.txt" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 
 	<!-- SIMULATION SETTING -->
@@ -68,6 +68,3 @@
 		default value = "__NULL__" => graine aleatoire -->
 
 </parameters>
-
-
-

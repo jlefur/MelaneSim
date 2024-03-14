@@ -3,13 +3,13 @@ package melanesim.util;
 import java.util.TreeSet;
 
 import data.C_ReadRaster;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertRainFiles;
 import presentation.dataOutput.C_FileWriter;
 
 /** This class allow us to compute a raster with a list of txt file  .
  * @author M. Sall 06.2018 */
-public class C_ComputeRasterWithList implements I_ConstantString {
+public class C_ComputeRasterWithList implements I_ConstantStringRodents {
 	private String format = "txt";
 	public C_ComputeRasterWithList(String pathFolder, String fileName) {
 		TreeSet<String> fileNameList = C_ConvertRainFiles.buildFileNameList(RASTER_PATH_RODENTS + pathFolder);

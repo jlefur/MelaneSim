@@ -21,11 +21,11 @@ import javax.swing.JTextField;
 
 import presentation.dataOutput.C_FileWriter;
 import data.C_ReadWriteFile;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 /**
  * @author Pape Adama MBOUP 2014 revu 28/06/2015
  */
-public class C_batchParamsBuilder extends JFrame implements I_ConstantString,ActionListener, MouseListener {
+public class C_batchParamsBuilder extends JFrame implements I_ConstantStringRodents,ActionListener, MouseListener {
 	private static final long serialVersionUID = 1L;
 	private JTextField params;
 	private JTextField initXmlFileName;

@@ -1,5 +1,5 @@
 package thing.dna;
-import data.constants.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantNumeric;
 import melanesim.C_ContextCreator;
 import thing.dna.variator.C_GeneMutatorInteger;
 import thing.dna.variator.C_RecombinatorMicrosat;

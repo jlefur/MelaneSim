@@ -1,4 +1,4 @@
-package data.constants;
+package data.constants.rodents;
 
 /** Gather icons gif filenames for every protocol.
  * @author JLF 05.2018 */

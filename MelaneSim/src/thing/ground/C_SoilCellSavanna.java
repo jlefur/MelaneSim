@@ -1,7 +1,7 @@
 package thing.ground;
 
 import data.C_Parameters;
-import data.constants.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantGerbil;
 
 /** Soil unit able to support rain
  * @author JLF MS 10-2015 */

@@ -4,12 +4,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import data.constants.rodents.I_ConstantNumeric;
 import thing.dna.variator.C_GeneConstraint;
 import thing.dna.variator.C_GeneMutatorDouble;
 import thing.dna.variator.C_RecombinatorMapGenome;
 import thing.dna.variator.I_GeneMutator;
 import thing.dna.variator.I_Recombinator;
-import data.constants.I_ConstantNumeric;
 import melanesim.C_ContextCreator;
 
 /** A Chromosome pair is just two chromosomes of a diploid genome.

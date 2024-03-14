@@ -7,7 +7,7 @@ import java.util.Map;
 
 /** The amniotes are a group of tetrapods that have an adaptation to lay eggs
  * @author J.Le Fur 2012 (source code origin: Kyle Wagner), rev. JLF 08.2014 */
-public class C_GenomeAmniota extends C_GenomeAnimalia implements data.constants.I_ConstantString {
+public class C_GenomeAmniota extends C_GenomeAnimalia implements data.constants.rodents.I_ConstantStringRodents {
 	// Maplocs and locus of the chromosome Pair:
 	protected static final ArrayList<Double> SEXUAL_MATURITY_MAPLOCS = new ArrayList<Double>(Arrays.asList(11.));
 	protected static final ArrayList<Double> LITTER_SIZE_MAPLOCS = new ArrayList<Double>(Arrays.asList(12.));

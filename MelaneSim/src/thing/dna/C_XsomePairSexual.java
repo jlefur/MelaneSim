@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import data.constants.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantNumeric;
 import melanesim.C_ContextCreator;
 import thing.dna.variator.C_GeneConstraint;
 import thing.dna.variator.C_GeneMutatorSet;

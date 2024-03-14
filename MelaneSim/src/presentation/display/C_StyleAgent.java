@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 
 import data.C_Parameters;
-import data.constants.I_ConstantGerbil;
-import data.constants.I_ConstantImagesNames;
-import data.constants.I_ConstantNumeric;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantImagesNames;
+import data.constants.rodents.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_ContextCreator;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.visualizationOGL2D.StyleOGL2D;
@@ -26,7 +26,7 @@ import thing.I_SituatedThing;
 /** Style des agents "animaux". Définit une icône ou une ellipse pour chaque agent au lancement de la simulation en fonction de
  * son sexe et la fait varier suivant son âge.
  * @author A Realini 2011 */
-public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantString, I_ConstantNumeric,
+public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStringRodents, I_ConstantNumeric,
 		I_ConstantImagesNames {
 	private float imageScale = IMAGE_SCALE; // Taille d'une image initiale .15
 	// Ellipse scales (nb: 50x50-> .3)

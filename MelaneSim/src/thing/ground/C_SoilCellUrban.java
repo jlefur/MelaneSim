@@ -1,6 +1,6 @@
 package thing.ground;
 
-import data.constants.I_ConstantDodel2;
+import data.constants.rodents.I_ConstantDodel2;
 
 /** Soil unit able to support wall obstacle * @author JLF MS 09-2019, full rev. JLF 01,05.2022 */
 public class C_SoilCellUrban extends C_SoilCellNode implements I_ConstantDodel2 {

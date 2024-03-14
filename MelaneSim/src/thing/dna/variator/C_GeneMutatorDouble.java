@@ -1,5 +1,5 @@
 package thing.dna.variator;
-import data.constants.I_ConstantNumeric;
+import data.constants.rodents.I_ConstantNumeric;
 import melanesim.C_ContextCreator;
 /** @author kyle wagner, elyk@acm.org / modif. J.LeFur 2011
  * Version 1.0, Wed Dec 13 20:33:52 2000 */

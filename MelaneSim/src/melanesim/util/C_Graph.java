@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import data.constants.rodents.I_ConstantTransportation;
 import thing.ground.C_SoilCellGraphed;
-import data.constants.I_ConstantTransportation;
 
 /** ground structure with the properties of an unweighted (non étiqueté) graph.
  * @see melanesim#C_LandscapeNetwork()

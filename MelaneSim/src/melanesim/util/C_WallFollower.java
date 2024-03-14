@@ -3,7 +3,7 @@ package melanesim.util;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
-import data.constants.I_ConstantDodel2;
+import data.constants.rodents.I_ConstantDodel2;
 import thing.A_Animal;
 import thing.A_VisibleAgent;
 import thing.I_SituatedThing;

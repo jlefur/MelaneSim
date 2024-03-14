@@ -17,7 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import data.C_ReadWriteFile;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import presentation.dataOutput.C_FileWriter;
 
 /** Display buttons to select one of SimMasto protocols, then split xml file to set the protocol<br>
@@ -35,7 +35,7 @@ import presentation.dataOutput.C_FileWriter;
  * 7.-DODEL: commensal rodent dynamics in urban landscape<br>
  * 8.-GERBILS: Gerbillus nigeriae in North Senegal (CERISE project)<br>
 */
-public class C_ChooseProtocol_Rodents extends JFrame implements ActionListener, I_ConstantString {
+public class C_ChooseProtocol_Rodents extends JFrame implements ActionListener, I_ConstantStringRodents {
 	private static final long serialVersionUID = 1L;
 	private JPanel panel = new JPanel();
 	private BufferedImage buttonIcon = null;

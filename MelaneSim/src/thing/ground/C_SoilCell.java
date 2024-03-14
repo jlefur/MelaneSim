@@ -4,11 +4,11 @@ package thing.ground;
 import java.util.TreeSet;
 import com.vividsolutions.jts.geom.Coordinate;
 import data.C_Parameters;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 
 /** a soil unit, cell, pixel, ... (initially stood for land parcel)
  * @author Q.Baduel - 2009, JLF 2011, PAM 2013 */
-public class C_SoilCell extends A_Container implements I_ConstantString {
+public class C_SoilCell extends A_Container implements I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

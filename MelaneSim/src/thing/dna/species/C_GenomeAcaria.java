@@ -14,7 +14,7 @@ import thing.dna.C_XsomePairMicrosat;
 import thing.dna.C_XsomePairSexual;
 
 /** @author M Sall 2019 */
-public class C_GenomeAcaria extends C_GenomeAnimalia implements data.constants.I_ConstantString {
+public class C_GenomeAcaria extends C_GenomeAnimalia implements data.constants.rodents.I_ConstantStringRodents {
 	// Maplocs and locus of the chromosome Pair:
 	protected static final ArrayList<Double> SEXUAL_MATURITY_MAPLOCS = new ArrayList<Double>(Arrays.asList(20.));
 	protected static final ArrayList<Double> LITTER_SIZE_MAPLOCS = new ArrayList<Double>(Arrays.asList(21.));

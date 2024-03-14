@@ -1,12 +1,12 @@
 package data;
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.parameter.Parameters;
 import thing.A_Animal;
 
 /** declare every parameters _for all protocols_ which may be modified within the GUI @see parameters.xml
  * @author Longueville, 2011, rev. jlefur 07.2012, rev.PAMBOUP 03.2014, JLF 07.2014 */
-public class C_Parameters implements I_ConstantString {
+public class C_Parameters implements I_ConstantStringRodents {
 	public static Parameters parameters;
 
 	// GENERAL //

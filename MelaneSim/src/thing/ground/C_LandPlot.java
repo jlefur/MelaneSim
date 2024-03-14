@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import data.constants.I_ConstantString;
+import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 import thing.A_Animal;
 import thing.I_SituatedThing;
@@ -15,7 +15,7 @@ import thing.ground.landscape.C_Landscape;
 /** Landplots are sets of identical joint C_SoilCells
  * @see C_SoilCell
  * @author jlefur 2012, rev 10.2015 */
-public class C_LandPlot extends A_Container implements I_ConstantString {
+public class C_LandPlot extends A_Container implements I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

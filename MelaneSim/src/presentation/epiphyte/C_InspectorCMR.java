@@ -16,7 +16,7 @@ import thing.ground.I_Container;
  * @see C_RodentCmr
  * @author Le Fur and Diakhate, sept.2013, rev. JLF 08.2014 */
 
-public class C_InspectorCMR extends A_Inspector implements data.constants.I_ConstantBandia {
+public class C_InspectorCMR extends A_Inspector implements data.constants.rodents.I_ConstantBandia {
 	//
 	// FIELDS
 	//

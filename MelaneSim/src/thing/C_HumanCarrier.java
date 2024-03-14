@@ -5,8 +5,8 @@ import java.util.TreeSet;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import data.constants.I_ConstantString;
-import data.constants.I_ConstantTransportation;
+import data.constants.rodents.I_ConstantStringRodents;
+import data.constants.rodents.I_ConstantTransportation;
 import melanesim.C_ContextCreator;
 import melanesim.util.C_PathWanderer;
 import thing.dna.I_DiploidGenome;
@@ -19,7 +19,7 @@ import thing.ground.landscape.C_Landscape;
 
 /** A human carrier owns a C_Vehicle and go from one city to the other.
  * @author Mboup & Le Fur 07-09.2012 */
-public class C_HumanCarrier extends A_Human implements I_ConstantString, I_ConstantTransportation {
+public class C_HumanCarrier extends A_Human implements I_ConstantStringRodents, I_ConstantTransportation {
 	//
 	// FIELDS
 	//

@@ -1,4 +1,4 @@
-package data.constants;
+package data.constants.rodents;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import melanesim.protocol.A_ProtocolTransportation;
 
 /** Gather all variables since software specifications require no numbers in the java sources
  * @author P.A.Mboup, 2013, rev. JLF 09.2014 */
-public interface I_ConstantTransportation extends I_ConstantString {
+public interface I_ConstantTransportation extends I_ConstantStringRodents {
 
 	/** Vehicle specifications by type; we have [speed, speedUnit, rodentMaxLoad, loadingProba, graphType, account for track
 	 * condition] Speed in km/h unit is converted to the simulation space unit/tick */

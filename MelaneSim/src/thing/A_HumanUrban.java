@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import data.constants.I_ConstantDodel2;
+import data.constants.rodents.I_ConstantDodel2;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;

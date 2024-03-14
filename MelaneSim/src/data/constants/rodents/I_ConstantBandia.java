@@ -1,4 +1,4 @@
-package data.constants;
+package data.constants.rodents;
 
 public interface I_ConstantBandia extends I_ConstantNumeric {
 

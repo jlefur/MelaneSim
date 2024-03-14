@@ -5,7 +5,7 @@ import java.util.TreeSet;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
-import data.constants.I_ConstantGerbil;
+import data.constants.rodents.I_ConstantGerbil;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import repast.simphony.engine.environment.RunState;

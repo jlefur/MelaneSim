@@ -1,6 +1,6 @@
 package thing;
 
-import data.constants.I_ConstantTransportation;
+import data.constants.rodents.I_ConstantTransportation;
 import melanesim.C_ContextCreator;
 import thing.dna.I_DiploidGenome;
 import thing.ground.C_Vehicle;
