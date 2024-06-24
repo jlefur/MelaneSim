@@ -51,7 +51,7 @@ public class C_Style2dAffinityType implements ValueLayerStyleOGL, I_ConstantNume
 			    this.colorMap = colorMapBandia(this.colorMap);
 				System.out.print(" Bandia");
 			}
-			else if (C_Parameters.PROTOCOL.equals(GERBIL_PROTOCOL)) {
+			else if (C_Parameters.PROTOCOL.equals(GERBIL)) {
 			    this.colorMap = colorMapGerbilLandcover(this.colorMap);
 				System.out.print(" Gerbil landcover");
 			}

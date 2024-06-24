@@ -2,6 +2,7 @@ package melanesim.util;
 
 import java.util.TreeSet;
 
+import data.C_Parameters;
 import data.C_ReadRaster;
 import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertRainFiles;
@@ -12,7 +13,7 @@ import presentation.dataOutput.C_FileWriter;
 public class C_ComputeRasterWithList implements I_ConstantStringRodents {
 	private String format = "txt";
 	public C_ComputeRasterWithList(String pathFolder, String fileName) {
-		TreeSet<String> fileNameList = C_ConvertRainFiles.buildFileNameList(RASTER_PATH_RODENTS + pathFolder);
+		TreeSet<String> fileNameList = C_ConvertRainFiles.buildFileNameList(C_Parameters.RASTER_PATH + pathFolder);
 		if (fileNameList.isEmpty()) {
 			System.err.println("C_ComputeRasterWithList: folder " + pathFolder + " is empty.");
 			return;
@@ -23,12 +24,12 @@ public class C_ComputeRasterWithList implements I_ConstantStringRodents {
 			java.util.Iterator<String> iteratorValue = fileNameList.iterator();
 			if (format.compareTo("txt") == 0) {
 				String value = iteratorValue.next();
-				matrixRead = C_ReadRaster.txtRasterLoader(RASTER_PATH_RODENTS + pathFolder + value);
+				matrixRead = C_ReadRaster.txtRasterLoader(C_Parameters.RASTER_PATH + pathFolder + value);
 				System.out.println(value);
 				while (iteratorValue.hasNext()) {
 					value = iteratorValue.next();
 					System.out.println(value);
-					matrixToCompare = C_ReadRaster.txtRasterLoader(RASTER_PATH_RODENTS + pathFolder + value);
+					matrixToCompare = C_ReadRaster.txtRasterLoader(C_Parameters.RASTER_PATH + pathFolder + value);
 					for (int j = 0; j < matrixRead.length; j++)
 						for (int k = 0; k < matrixRead[0].length; k++) {
 							if (matrixToCompare[j][k] != 0 && matrixRead[j][k] != matrixToCompare[j][k]) matrixRead[j][k] = matrixToCompare[j][k];
@@ -36,9 +37,9 @@ public class C_ComputeRasterWithList implements I_ConstantStringRodents {
 				}
 			}
 			else {
-				matrixRead = C_ReadRaster.imgRasterLoader(RASTER_PATH_RODENTS + pathFolder + iteratorValue.next());
+				matrixRead = C_ReadRaster.imgRasterLoader(C_Parameters.RASTER_PATH + pathFolder + iteratorValue.next());
 				while (iteratorValue.hasNext()) {
-					matrixToCompare = C_ReadRaster.imgRasterLoader(RASTER_PATH_RODENTS + pathFolder + iteratorValue.next());
+					matrixToCompare = C_ReadRaster.imgRasterLoader(C_Parameters.RASTER_PATH + pathFolder + iteratorValue.next());
 					for (int j = 0; j < matrixRead.length; j++)
 						for (int k = 0; k < matrixRead[0].length; k++) {
 							if (matrixRead[j][k] != matrixToCompare[j][k] && matrixToCompare[j][k] != 0) matrixRead[j][k] = matrixToCompare[j][k];
@@ -50,7 +51,7 @@ public class C_ComputeRasterWithList implements I_ConstantStringRodents {
 			C_FileWriter rasterFile_Utxt;
 			nbColumns = matrixRead.length;
 			nbLines = matrixRead[0].length;
-			rasterFile_Utxt = new C_FileWriter(RASTER_PATH_RODENTS + pathFolder + "/" + fileName + ".txt", false);
+			rasterFile_Utxt = new C_FileWriter(C_Parameters.RASTER_PATH + pathFolder + "/" + fileName + ".txt", false);
 			// Compute max and min values of the matrix
 			int maxValue = 0;
 			int minValue = Integer.MAX_VALUE;

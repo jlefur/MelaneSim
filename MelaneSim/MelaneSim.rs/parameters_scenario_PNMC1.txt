@@ -31,7 +31,7 @@
 		
 	<!-- PROTOCOL DEPENDENT -->
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
-		type="java.lang.String" defaultValue="PNMC_plancton" isReadOnly="true"
+		type="java.lang.String" defaultValue="ocean.PNMC_plancton" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<parameter name="EXCLOS" displayName="1c/ Metapopulation(exclos)"
 		type="boolean" defaultValue="false" isReadOnly="false"
@@ -41,7 +41,7 @@
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 
 	<parameter name="RASTER_FILE" displayName="1h/grid filename"
-		type="java.lang.String" defaultValue="PNMC_bathy.1a.txt" isReadOnly="false"
+		type="java.lang.String" defaultValue="20231128-TOPEX-ZEE2_GRILLEV2.1.GRD" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 
 	<!-- SIMULATION SETTING -->
@@ -58,7 +58,7 @@
 <!-- fileName : scenario.xml -->
 <!-- protocolName : PNMC_plancton -->
 <Scenario>
-	<repast.simphony.dataLoader.engine.ClassNameDataLoaderAction context="Melanesim" file="repast.simphony.dataLoader.engine.ClassNameDataLoaderAction_0.xml" />
+	<repast.simphony.dataLoader.engine.ClassNameDataLoaderAction context="SIMmasto0" file="repast.simphony.dataLoader.engine.ClassNameDataLoaderAction_0.xml" />
 	<repast.simphony.action.display context="SIMmasto0" file="styles\repast.simphony.action.display_PNMC_plancton.xml" />
 	<repast.simphony.userpanel.ui.DefaultUserPanelDescriptorAction context="SIMmasto0" file="repast.simphony.userpanel.ui.DefaultUserPanelDescriptorAction_0.xml" />
 	<model.initializer class="presentation.display.C_CustomPanelSet" />

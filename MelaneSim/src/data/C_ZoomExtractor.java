@@ -24,7 +24,7 @@ public class C_ZoomExtractor implements I_ConstantStringRodents, I_ConstantGerbi
 		int[][] referenceMatrix = null;
 		String zoomFileName = "";
 		Point zoomOrigin_Ucell = computeZoomOrigin_Ucell(zoomOrigin_Udegree);
-		TreeSet<String> fileNameList = C_ConvertRainFiles.buildFileNameList(RASTER_PATH_RODENTS + pathFolder);
+		TreeSet<String> fileNameList = C_ConvertRainFiles.buildFileNameList(C_Parameters.RASTER_PATH + pathFolder);
 		if (fileNameList.isEmpty()) {
 			System.err.println("C_ZoomExtractor.extractZoom(): folder " + pathFolder + " is empty.");
 			return;
@@ -35,7 +35,7 @@ public class C_ZoomExtractor implements I_ConstantStringRodents, I_ConstantGerbi
 			format = getExtension(fileName);
 			switch (format) {
 				case "bmp" : {
-					referenceMatrix = rainFilesConverter.readRainRaster(RASTER_PATH_RODENTS + pathFolder + "/" + fileName);
+					referenceMatrix = rainFilesConverter.readRainRaster(C_Parameters.RASTER_PATH + pathFolder + "/" + fileName);
 					zoomMatrix = extractZoomFromGrid(referenceMatrix, zoomOrigin_Ucell, zoomWidth_Ucell, zoomHeight_Ucell, "bmp");
 					if (fileName.contains("landcover")) zoomFileName = "landcover";
 					else zoomFileName = (fileName.split("-")[0]).substring(0, 6) + "-Zoom-Rain";
@@ -43,8 +43,8 @@ public class C_ZoomExtractor implements I_ConstantStringRodents, I_ConstantGerbi
 				}
 					break;
 				case "txt" : {
-					System.out.println(RASTER_PATH_RODENTS + pathFolder + "/" + fileName);
-					referenceMatrix = C_ReadRaster.txtRasterLoader(RASTER_PATH_RODENTS + pathFolder + "/" + fileName);
+					System.out.println(C_Parameters.RASTER_PATH + pathFolder + "/" + fileName);
+					referenceMatrix = C_ReadRaster.txtRasterLoader(C_Parameters.RASTER_PATH + pathFolder + "/" + fileName);
 					zoomMatrix = extractZoomFromGrid(referenceMatrix, zoomOrigin_Ucell, zoomWidth_Ucell, zoomHeight_Ucell, "txt");
 					if (fileName.contains("landcover")) zoomFileName = "landcover";
 					else zoomFileName = (fileName.split("-")[0]).substring(0, 6) + "-Zoom-Rain";

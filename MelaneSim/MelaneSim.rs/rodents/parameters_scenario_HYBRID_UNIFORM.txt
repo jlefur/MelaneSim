@@ -31,7 +31,7 @@
 		
 	<!-- PROTOCOL DEPENDENT -->
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
-		type="java.lang.String" defaultValue="HYBRID_UNIFORM" isReadOnly="true"
+		type="java.lang.String" defaultValue="rodents.HYBRID_UNIFORM" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<parameter name="PERSISTANCE_BURROW" displayName="1b/ Burrows persist"
 		type="boolean" defaultValue="false" isReadOnly="false"

@@ -4,6 +4,8 @@ package data.constants.rodents;
 import java.util.Set;
 import java.util.TreeSet;
 
+import javax.media.j3d.Switch;
+
 /** - Constant names concerning types names shared within all protocols<br>
  * - Strings as well as unnecessary numbers are meant to disappear from the source code (see also I_numeric_constants and other
  * data/I_???_constants.java) <br>
@@ -40,7 +42,6 @@ public interface I_ConstantStringRodents {
 	public final String CONSOLE_OUTPUT_FILE = "retour_console.txt";
 	public final String CSV_PATH = "data_csv";
 	public final String RASTER_PATH_RODENTS = "data_raster/rodents/";
-	public final String RASTER_PATH_MELANESIA = "data_raster/melanesia/";
 	public final String OUTPUT_PATH = "data_output/";
 	public final String REPAST_PATH = "MelaneSim.rs/";
 	public final String EVENT_VALUE2_FIELD_SEPARATOR = ":";// used when event value2 is a list
@@ -48,19 +49,22 @@ public interface I_ConstantStringRodents {
 	public final String CSV_FIELD_SEPARATOR = ";";
 	public final String NAMES_SEPARATOR = "_";// used when event value2 is a list
 
-	// PROTOCOL NAMES - used in context creator
-	public static final String BANDIA = "BANDIA";
-	public static final String CAGES = "CAGES";
-	public static final String CENTENAL = "CENTENAL";
-	public static final String DECENAL = "DECENAL";
-	public static final String CHIZE = "CHIZE";
-	public static final String ENCLOSURE = "ENCLOSURE";
-	public static final String HYBRID_UNIFORM = "HYBRID_UNIFORM";
-	public static final String MUS_TRANSPORT = "MUS_TRANSPORT";
-	public static final String DODEL = "DODEL";
-	public static final String DODEL2 = "DODEL2";
-	public static final String VILLAGE = "VILLAGE";
-	public static final String GERBIL_PROTOCOL = "GERBIL";
+	// MELANESIM PROTOCOL NAMES - used in context creator
+	public static final String PNMC_PK = "ocean.PNMC_plancton";
+	// RODENTS PROTOCOL NAMES - used in context creator
+	public static final String BANDIA = "rodents.BANDIA";
+	public static final String CAGES = "rodents.CAGES";
+	public static final String CENTENAL = "rodents.CENTENAL";
+	public static final String DECENAL = "rodents.DECENAL";
+	public static final String CHIZE = "rodents.CHIZE";
+	public static final String CHIZE2 = "rodents.CHIZE2";
+	public static final String ENCLOSURE = "rodents.ENCLOSURE";
+	public static final String HYBRID_UNIFORM = "rodents.HYBRID_UNIFORM";
+	public static final String MUS_TRANSPORT = "rodents.MUS_TRANSPORT";
+	public static final String DODEL = "rodents.DODEL";
+	public static final String DODEL2 = "rodents.DODEL2";
+	public static final String VILLAGE = "rodents.VILLAGE";
+	public static final String GERBIL = "rodents.GERBIL";
 
 	// EVENT TYPES CONSTANTS - used in chrono events
 	public static final String GERBIL_EVENT = "Gerbillus_nigeriae";

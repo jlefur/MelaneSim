@@ -40,11 +40,12 @@ import thing.dna.species.plants.C_GenomeFabacea;
 import thing.dna.species.plants.C_GenomePoacea;
 import thing.dna.species.rodents.C_GenomeGerbillusNigeriae;
 import thing.ground.C_Nest;
+import thing.ground.C_SoilCell;
 import thing.ground.C_SoilCellSavanna;
 
 /** Initialize the simulation and manage inputs coming from the csv events file
- * @author J.Le Fur, 10.2014, rev. M.Sall 12.2015, JLF 02.2021 */
-public class C_Protocol_PNMC_particules extends A_ProtocolFossorial implements I_ConstantPNMC_particules {
+ * @author J.Le Fur, 10.2014, rev. M.Sall 12.2015, JLF 02.2021, 03.2024 */
+public class C_Protocol_PNMC_particules extends A_Protocol implements I_ConstantPNMC_particules {
 	//
 	// FIELDS
 	//
@@ -58,7 +59,7 @@ public class C_Protocol_PNMC_particules extends A_ProtocolFossorial implements I
 		this.chronogram = new C_Chronogram(I_ConstantPNMC_particules.CHRONO_FILENAME);
 		// facilityMap = new C_Background(0, -.4, -.4);
 		// -10 plus gros, -5 plus petit
-this.facilityMap = null;// For zoom1
+		this.facilityMap = null;
 		I_ConstantNumeric.cellSize.set(0, CELL_SIZE);// Choose value of cell size
 	}
 	//
@@ -83,11 +84,10 @@ this.facilityMap = null;// For zoom1
 		// Comment the following lines to undisplay soil cells, JLF 10.2015, 11.2015
 		for (int i = 0; i < this.landscape.dimension_Ucell.width; i++) {
 			for (int j = 0; j < this.landscape.dimension_Ucell.height; j++) {
-				C_SoilCellSavanna cell = new C_SoilCellSavanna(this.landscape.getGrid()[i][j].getAffinity(), i, j);
+				C_SoilCell cell = new C_SoilCell(this.landscape.getGrid()[i][j].getAffinity(), i, j);
 				context.add(cell);
 				this.landscape.setGridCell(i, j, cell);
 				this.landscape.moveToLocation(cell, cell.getCoordinate_Ucs());
-				this.contextualizeVegetationInSavannaCell((C_SoilCellSavanna) cell);
 				// Homogenize background color once vegetation is set
 				if (cell.getAffinity() != 0) {// 0 = water TODO number in source 2018.02 jlf
 					this.landscape.getValueLayer().set(BACKGROUND_COLOR, i, j);
@@ -110,69 +110,6 @@ this.facilityMap = null;// For zoom1
 	public C_BarnOwl createBarnOwl() {
 		return new C_BarnOwl(new C_GenomeTytoAlba());
 	}
-	/** Add vegetation in soil cell at the requested position from the value of land cover (i.e., cell affinity) which contains
-	 * two types of vegetation per cell<br>
-	 * rev. JLF 03.2021 */
-	public void contextualizeVegetationInSavannaCell(C_SoilCellSavanna currentSoilCellSavanna) {
-		String[] vegetationInLandcover = LANDCOVER_TO_VEGETATION.get(currentSoilCellSavanna.getAffinity());
-		List<Coordinate> coordinateList = new ArrayList<Coordinate>();
-		if (vegetationInLandcover != null) {
-			Coordinate oneCoordinate = null;
-			// Randomly add vegetation in soil cell, check that vegetation are not too close
-			for (int i = 0; i < 9; i++) {
-				for (int coverComponent = 0; coverComponent < 2; coverComponent++) {
-					oneCoordinate = getVegetationCoordinate(DISTANCE_THRESHOLD, coordinateList, currentSoilCellSavanna);
-					C_Vegetation oneVegetation = createVegetation(vegetationInLandcover[coverComponent]);
-					if (oneVegetation != null) {
-						contextualizeNewThingInContainer(oneVegetation, currentSoilCellSavanna);
-						this.landscape.moveToLocation(oneVegetation, oneCoordinate);
-						coordinateList.add(oneCoordinate);
-					}
-				}
-			}
-		}
-	}
-	/** Compute one coordinate, compare its position with the other in the list and if it's correct return the position */
-	public Coordinate getVegetationCoordinate(double distanceThresHold, List<Coordinate> coordinateList,
-			C_SoilCellSavanna currentCell) {
-		Coordinate oneCoordinate = null;
-		while (oneCoordinate == null) {
-			oneCoordinate = new Coordinate(currentCell.retrieveLineNo()
-					+ C_ContextCreator.randomGeneratorForInitialisation.nextDouble(), currentCell.retrieveColNo()
-							+ C_ContextCreator.randomGeneratorForInitialisation.nextDouble());
-			if (coordinateList.size() != 0) {
-				int i = coordinateList.size();
-				while ((oneCoordinate != null) && (i > 0)) {
-					double vegetationDistance = .0;
-					Coordinate secondCoord = coordinateList.get(i - 1);
-					vegetationDistance = Math.sqrt(((oneCoordinate.x - secondCoord.x) * (oneCoordinate.x
-							- secondCoord.x)) + (oneCoordinate.y - secondCoord.y) * (oneCoordinate.y - secondCoord.y));
-					if (vegetationDistance < distanceThresHold) oneCoordinate = null;
-					i--;
-				}
-			}
-		}
-		return oneCoordinate;
-	}
-	/** Create vegetation with genome given in args */
-	public C_Vegetation createVegetation(String vegetationInLandcover) {
-		C_Vegetation oneVegetation = null;
-		switch (vegetationInLandcover) {
-			case str_SHRUB :
-				oneVegetation = new C_Vegetation(new C_GenomeBalanites());
-				break;
-			case str_CROP :
-				oneVegetation = new C_Vegetation(new C_GenomeFabacea());
-				break;
-			case str_GRASS :
-				oneVegetation = new C_Vegetation(new C_GenomePoacea());
-				break;
-			case str_TREE :
-				oneVegetation = new C_Vegetation(new C_GenomeAcacia());
-				break;
-		}
-		return oneVegetation;
-	}
 	/** @see A_Protocol#manageOneEvent */
 	public void manageOneEvent(C_Event event) {
 		Coordinate coordinateCell_Ucs = null;
@@ -184,6 +121,7 @@ this.facilityMap = null;// For zoom1
 		}
 		if (coordinateCell_Ucs == null) coordinateCell_Ucs = new Coordinate(event.whereX_Ucell, event.whereY_Ucell);
 		switch (event.type) {
+			// Read monthly current grid east-west then north-south
 			case CURRENT_EVENT :// file name example: 199901-PE-Rain.txt or 199901-TPE-Rain.txt
 				String url; {
 				Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
@@ -191,11 +129,11 @@ this.facilityMap = null;// For zoom1
 				// Month of simulation begin in 0 why we need to add 1 in the month value and put 0 before the month value between
 				// 0 and 8
 				if (calendar.get(Calendar.MONTH) < 9)
-					url = RASTER_PATH_MELANESIA + rainUrl_suffixRainFile.get(0) + calendar.get(Calendar.YEAR) + "0" + (calendar
-							.get(Calendar.MONTH) + 1) + rainUrl_suffixRainFile.get(1);
+					url = RASTER_PATH_MELANESIA + currentSpeed_URL_suffix.get(0) + calendar.get(Calendar.YEAR) + "0"
+							+ (calendar.get(Calendar.MONTH) + 1) + currentSpeed_URL_suffix.get(1);
 				else
-					url = RASTER_PATH_MELANESIA + rainUrl_suffixRainFile.get(0) + calendar.get(Calendar.YEAR) + (calendar.get(
-							Calendar.MONTH) + 1) + rainUrl_suffixRainFile.get(1);
+					url = RASTER_PATH_MELANESIA + currentSpeed_URL_suffix.get(0) + calendar.get(Calendar.YEAR)
+							+ (calendar.get(Calendar.MONTH) + 1) + currentSpeed_URL_suffix.get(1);
 				int[][] matriceLue = C_ReadRaster.txtRasterLoader(url);
 				int imax = this.landscape.getDimension_Ucell().width;
 				int jmax = this.landscape.getDimension_Ucell().height;
@@ -205,39 +143,6 @@ this.facilityMap = null;// For zoom1
 						int value = matriceLue[i][j];
 						((C_SoilCellSavanna) this.landscape.getGrid()[i][j]).setRainLevel(value);
 					}
-				}
-			}
-				break;
-			case OWL_EVENT : {
-				// Verify that the thing location is within the domain
-				if ((coordinateCell_Ucs.x < width_heightRaster_Ukilometer.get(0))
-						&& (coordinateCell_Ucs.y < width_heightRaster_Ukilometer.get(1))) {
-					C_SoilCellSavanna eventSC = (C_SoilCellSavanna) this.landscape
-							.getGrid()[event.whereX_Ucell][event.whereY_Ucell];
-					Coordinate oneCoordinate = new Coordinate(eventSC.retrieveLineNo()
-							+ C_ContextCreator.randomGeneratorForInitialisation.nextDouble(), eventSC.retrieveColNo()
-									+ C_ContextCreator.randomGeneratorForInitialisation.nextDouble());
-					// create tree
-					C_Vegetation oneTree = createVegetation(str_TREE);
-					contextualizeNewThingInSpace(oneTree, oneCoordinate.x, oneCoordinate.y);
-					// create nest
-					C_Nest oneNest = new C_Nest(eventSC.getAffinity(), eventSC.retrieveColNo(), eventSC
-							.retrieveLineNo());
-					C_ContextCreator.protocol.contextualizeNewThingInContainer(oneNest, oneTree);
-					// create owl
-					C_BarnOwl one_barnOwl = this.createBarnOwl();
-					one_barnOwl.setRandomAge();
-					contextualizeNewThingInContainer(one_barnOwl, oneNest);
-					one_barnOwl.energy_Ukcal--;
-				}
-			}
-				break;
-			case GERBIL_EVENT : {
-				if ((coordinateCell_Ucs.x < width_heightRaster_Ukilometer.get(0))
-						&& (coordinateCell_Ucs.y < width_heightRaster_Ukilometer.get(1))) {
-					C_RodentGerbil oneRodent = this.createRodent();
-					contextualizeNewThingInSpace(oneRodent, event.whereX_Ucell, event.whereY_Ucell);
-					oneRodent.setRandomAge();
 				}
 			}
 				break;
@@ -257,29 +162,12 @@ this.facilityMap = null;// For zoom1
 	// super.initProtocol();// manage inspectors and files after everything
 	// }
 	@Override
-	public void readUserParameters() {
-		super.readUserParameters();
-		String[] raster_Parameters = RASTER_PARAMETERS.get(C_Parameters.RASTER_URL.toLowerCase());
-		if (raster_Parameters != null) {
-			C_Parameters.RASTER_URL = (raster_Parameters[0]);
-			width_heightRaster_Ukilometer.set(0, Integer.parseInt(raster_Parameters[3]));
-			width_heightRaster_Ukilometer.set(1, Integer.parseInt(raster_Parameters[4]));
-			rasterLongitudeWest_LatitudeSouth_Udegree.set(0, Double.parseDouble(raster_Parameters[5]));
-			rasterLongitudeWest_LatitudeSouth_Udegree.set(1, Double.parseDouble(raster_Parameters[6]));
-		}
-	}
-	/** TODO JLF 2021.02 temporaire pour réduire la population */
-	protected void blackMap0() {
-		IndexedIterable<Object> it = RunState.getInstance().getMasterContext().getObjects(C_RodentGerbil.class);
-		for (int i = 0; i < 100; i++) ((A_NDS) it.get(i)).setDead(true);
-	}
-	@Override
 	/** Color the map in black to see the overall distribution of burrows<br>
 	 * Author J.Le Fur 10.2014 TODO JLF 2014.10 should be in presentation package ? */
 	protected void blackMap() {
-		for (int i = 0; i < this.landscape.getDimension_Ucell().getWidth(); i++) for (int j = 0; j < this.landscape
-				.getDimension_Ucell().getHeight(); j++) {
-					this.landscape.getValueLayer().set(BLACK_MAP_COLOR, i, j);
-				}
+		for (int i = 0; i < this.landscape.getDimension_Ucell().getWidth(); i++)
+			for (int j = 0; j < this.landscape.getDimension_Ucell().getHeight(); j++) {
+				this.landscape.getValueLayer().set(BLACK_MAP_COLOR, i, j);
+			}
 	}
 }

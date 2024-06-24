@@ -240,37 +240,37 @@ public class C_UserPanel extends JPanel implements UserPanelCreator, I_ConstantS
     private JLabel createTitleBlock() {
         String fileName = "";
         switch (C_Parameters.PROTOCOL) {
-            case "CHIZE" :
+            case CHIZE :
                 fileName = "icons/rodents/titleChize.jpg";
                 break;
-            case "CHIZE2" :
+            case CHIZE2 :
                 fileName = "icons/rodents/titleChize2.gif";
                 break;
-            case "CENTENAL" :
+            case CENTENAL :
                 fileName = "icons/rodents/titleCentenal.gif";
                 break;
-            case "DECENAL" :
+            case DECENAL :
                 fileName = "icons/rodents/titleDecenal.gif";
                 break;
-            case "CAGES" :
+            case CAGES :
                 fileName = "icons/rodents/titleCages.gif";
                 break;
-            case "DODEL" :
+            case DODEL :
                 fileName = "icons/rodents/titleDodel1.gif";
                 break;
-            case "DODEL2" :
+            case DODEL2 :
                 fileName = "icons/rodents/titleDodel2.gif";
                 break;
-            case "MUS_TRANSPORT" :
+            case MUS_TRANSPORT :
                 fileName = "icons/rodents/titleMusTransport.gif";
                 break;
-            case "BANDIA" :
+            case BANDIA :
                 fileName = "icons/rodents/titleBandia.gif";
                 break;
-            case "GERBIL" :
+            case GERBIL :
                 fileName = "icons/rodents/titleGerbil.gif";
                 break;
-            case "HYBRID_UNIFORM" :
+            case HYBRID_UNIFORM :
                 fileName = "icons/rodents/titleUniform.gif";
                 break;
         }
@@ -334,7 +334,7 @@ public class C_UserPanel extends JPanel implements UserPanelCreator, I_ConstantS
         switch (C_Parameters.PROTOCOL) {
             case DODEL2 :
             case DODEL :
-            case GERBIL_PROTOCOL :
+            case GERBIL :
                 return true;
             default :
                 return false;

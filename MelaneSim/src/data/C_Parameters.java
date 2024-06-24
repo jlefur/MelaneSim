@@ -1,4 +1,5 @@
 package data;
+import data.constants.I_ConstantPNMC_particules;
 import data.constants.rodents.I_ConstantStringRodents;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.parameter.Parameters;
@@ -6,10 +7,11 @@ import thing.A_Animal;
 
 /** declare every parameters _for all protocols_ which may be modified within the GUI @see parameters.xml
  * @author Longueville, 2011, rev. jlefur 07.2012, rev.PAMBOUP 03.2014, JLF 07.2014 */
-public class C_Parameters implements I_ConstantStringRodents {
+public class C_Parameters implements I_ConstantStringRodents, I_ConstantPNMC_particules {
 	public static Parameters parameters;
 
 	// GENERAL //
+	public static String RASTER_PATH;// rodents (SimMasto) or ocean (MelaneSim)
 	public static String PROTOCOL;
 	/** if true relative System.out.println() statements are displayed on the console */
 	public static boolean VERBOSE;
@@ -17,15 +19,17 @@ public class C_Parameters implements I_ConstantStringRodents {
 	public static boolean BLACK_MAP = false;
 
 	// SPACE //
-	/** EXCLOS: if yes, rodents leave the domain when they reach bordure (& are replaced with a new one), if no, rebound and stay within the domain<br>
+	/** EXCLOS: if yes, rodents leave the domain when they reach bordure (& are replaced with a new one), if no, rebound and stay
+	 * within the domain<br>
 	 * @see thing.ground.landscape.C_Landscape#bordure(A_Animal) */
 	public static boolean EXCLOS;
-	/**IMAGE: if yes, display objects as icons, else display dots*/
+	/** IMAGE: if yes, display objects as icons, else display dots */
 	public static boolean IMAGE;
 
 	public static String RASTER_URL;
 	public static String[] RASTERLIST_URL;
-	/** Raster background conversion factors: the width (in meter)of one pixel (was formerly size_of_one_box Chize: 747.8 cm.px^-1 */
+	/** Raster background conversion factors: the width (in meter)of one pixel (was formerly size_of_one_box Chize: 747.8
+	 * cm.px^-1 */
 	public static int CELL_WIDTH_Ucentimeter;
 	public static double CELL_WIDTH_Umeter;
 	/** conversion factor (e.g., Chize: 7.478 m.cs^-1, continuous space unit -> meters */
@@ -65,8 +69,12 @@ public class C_Parameters implements I_ConstantStringRodents {
 		// Following lines are compulsory here for C_ContextCreator to build the calendar and the raster before defining the
 		// protocol.
 		PROTOCOL = (String) parameters.getValue("PROTOCOL");
-		RASTER_URL = RASTER_PATH_RODENTS + parameters.getValue("RASTER_FILE");
-		/** Raster background conversion factors: the width (in meter)of one pixel (was formerly size_of_one_box Chize: 747.8 cm.px^-1 */
+		if (C_Parameters.PROTOCOL.contains("rodents")) RASTER_PATH = RASTER_PATH_RODENTS;
+		else RASTER_PATH = RASTER_PATH_MELANESIA;
+
+		RASTER_URL = RASTER_PATH + parameters.getValue("RASTER_FILE");
+		/** Raster background conversion factors: the width (in meter)of one pixel (was formerly size_of_one_box Chize: 747.8
+		 * cm.px^-1 */
 		{
 			CELL_WIDTH_Ucentimeter = ((Integer) parameters.getValue("CELL_WIDTH_Ucm")).intValue();
 			CELL_WIDTH_Umeter = (double) CELL_WIDTH_Ucentimeter / 100.;

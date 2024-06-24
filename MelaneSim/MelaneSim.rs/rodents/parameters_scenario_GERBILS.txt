@@ -5,7 +5,7 @@
 
 	<!-- COMMON INTER-PROTOCOLS -->
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
-		type="java.lang.String" defaultValue="GERBIL" isReadOnly="true"
+		type="java.lang.String" defaultValue="rodents.GERBIL" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 
 	<!-- Time scale -->

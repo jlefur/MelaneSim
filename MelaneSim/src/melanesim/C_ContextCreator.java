@@ -6,6 +6,7 @@ import data.constants.rodents.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.protocol.A_Protocol;
+import melanesim.protocol.C_Protocol_PNMC_particules;
 import melanesim.protocol.rodents.C_ProtocolBandia;
 import melanesim.protocol.rodents.C_ProtocolCage;
 import melanesim.protocol.rodents.C_ProtocolCentenal;
@@ -64,22 +65,26 @@ public class C_ContextCreator implements ContextBuilder<Object>, I_ConstantNumer
 		// new C_OutputConsole();
 		// System.out.println("C_ContextCreator.build(): console is backed up in " + CONSOLE_OUTPUT_FILE);
 
-		System.out.println("C_ContextCreator.build(): " + initializeRandomGenerators() + " random number generators initialized");
+		System.out.println("C_ContextCreator.build(): " + initializeRandomGenerators()
+				+ " random number generators initialized");
 		C_ConvertTimeAndSpace.init(C_Parameters.TICK_LENGTH_Ucalendar, C_Parameters.TICK_UNIT_Ucalendar, "M");
-		System.out.println("C_ContextCreator.build(): Initialized time and space converter class with the ground manager ");
+		System.out.println(
+				"C_ContextCreator.build(): Initialized time and space converter class with the ground manager ");
 		selectProtocol(context);
 		System.out.println("C_ContextCreator.build(): protocol " + C_Parameters.PROTOCOL + " selected");
 		System.out.println("C_ContextCreator.build(): Building the context ended: " + context.size() + " items");
 		System.out.println("------------------------------");
-		System.out.println("Now running at " + C_Parameters.TICK_LENGTH_Ucalendar + C_Parameters.TICK_UNIT_Ucalendar + ". per tick, ...");
+		System.out.println("Now running at " + C_Parameters.TICK_LENGTH_Ucalendar + C_Parameters.TICK_UNIT_Ucalendar
+				+ ". per tick, ...");
 		return context;
 	}
 
-	/** Several random generators are used in the model. Each is controlled by a seed and provides variability for specific features or processes in
-	 * the model. <br>
-	 * Each random generator is controlled by a specific seed that can be fixed or changed. When fixed, the random generator always provides the same
-	 * pseudorandom series of numbers. <br>
-	 * This makes it possible to carry out simulations in which only selected sources of variation change. author: J. Le Fur 2012, rev. 08.2014
+	/** Several random generators are used in the model. Each is controlled by a seed and provides variability for specific
+	 * features or processes in the model. <br>
+	 * Each random generator is controlled by a specific seed that can be fixed or changed. When fixed, the random generator
+	 * always provides the same pseudorandom series of numbers. <br>
+	 * This makes it possible to carry out simulations in which only selected sources of variation change. author: J. Le Fur 2012,
+	 * rev. 08.2014
 	 * @return nbGen the number of random generators initialized at that time */
 	private int initializeRandomGenerators() {
 		int nbGen = 0;
@@ -109,7 +114,8 @@ public class C_ContextCreator implements ContextBuilder<Object>, I_ConstantNumer
 	}
 	/** Initialization of the protocol declared in sim_constants author: J.LeFur 07.2012 */
 	private void selectProtocol(Context<Object> context) {
-		if (C_Parameters.PROTOCOL.contains(CHIZE)) protocol = new C_ProtocolChize(context);
+		if (C_Parameters.PROTOCOL.equals(PNMC_PK)) protocol = new C_Protocol_PNMC_particules(context);
+		else if (C_Parameters.PROTOCOL.contains(CHIZE)) protocol = new C_ProtocolChize(context);
 		else if (C_Parameters.PROTOCOL.equals(HYBRID_UNIFORM)) protocol = new C_ProtocolHybridUniform(context);
 		else if (C_Parameters.PROTOCOL.equals(CAGES)) protocol = new C_ProtocolCage(context);
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) protocol = new C_ProtocolEnclosure(context);
@@ -117,7 +123,7 @@ public class C_ContextCreator implements ContextBuilder<Object>, I_ConstantNumer
 		else if (C_Parameters.PROTOCOL.equals(CENTENAL)) protocol = new C_ProtocolCentenal(context);
 		else if (C_Parameters.PROTOCOL.equals(DECENAL)) protocol = new C_ProtocolDecenal(context);
 		else if (C_Parameters.PROTOCOL.equals(BANDIA)) protocol = new C_ProtocolBandia(context);
-		else if (C_Parameters.PROTOCOL.equals(GERBIL_PROTOCOL)) protocol = new C_ProtocolGerbil(context);
+		else if (C_Parameters.PROTOCOL.equals(GERBIL)) protocol = new C_ProtocolGerbil(context);
 		else if (C_Parameters.PROTOCOL.equals(DODEL)) protocol = new C_ProtocolDodel(context);
 		else if (C_Parameters.PROTOCOL.equals(DODEL2)) protocol = new C_ProtocolDodel2(context);
 		else {

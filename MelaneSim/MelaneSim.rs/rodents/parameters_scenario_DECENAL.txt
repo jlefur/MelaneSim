@@ -28,7 +28,7 @@
 		
 	<!-- PROTOCOL DEPENDENT -->
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
-		type="java.lang.String" defaultValue="DECENAL" isReadOnly="true"
+		type="java.lang.String" defaultValue="rodents.DECENAL" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<parameter name="VEHICLE_LOADING_PROBA_DIVIDER" displayName="1b/ p(rodentClimb) (1=data,100=data/100,...)"
 		type="java.lang.Integer" defaultValue="10000" isReadOnly="false"

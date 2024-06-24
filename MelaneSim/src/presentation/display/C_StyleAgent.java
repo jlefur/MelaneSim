@@ -49,7 +49,7 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 		else if (C_Parameters.PROTOCOL.contains(CENTENAL)) initCentenal();
 		else if (C_Parameters.PROTOCOL.equals(DECENAL)) initDecenal();
 		else if (C_Parameters.PROTOCOL.equals(MUS_TRANSPORT)) initMusTransport();
-		else if (C_Parameters.PROTOCOL.equals(GERBIL_PROTOCOL)) initGerbil();
+		else if (C_Parameters.PROTOCOL.equals(GERBIL)) initGerbil();
 		else if (C_Parameters.PROTOCOL.equals(BANDIA)) initBandia();
 		else if (C_Parameters.PROTOCOL.equals(DODEL2)) initDodel2();
 		C_ContextCreator.protocol.setStyleAgent(this);

@@ -32,7 +32,7 @@
 		
 	<!-- PROTOCOL DEPENDENT -->
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
-		type="java.lang.String" defaultValue="DODEL" isReadOnly="true"
+		type="java.lang.String" defaultValue="rodents.DODEL" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<parameter name="UNLOAD_FREQUENCY_Uweek" displayName="1b/ mouse unloads (1 per xx week)"
 		type="java.lang.Integer" defaultValue="1" isReadOnly="false"

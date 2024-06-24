@@ -62,7 +62,7 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 	/** Renvoie le nom de l'image à utiliser pour l'agent en paramètre */
 	public String getNameOfImage(I_SituatedThing agent) {
 		if (C_Parameters.PROTOCOL.equals(CHIZE)) return getNameOfImageChize(agent);
-		else if (C_Parameters.PROTOCOL.equals(GERBIL_PROTOCOL)) return getNameOfImageGerbil(agent);
+		else if (C_Parameters.PROTOCOL.equals(GERBIL)) return getNameOfImageGerbil(agent);
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) return getNameOfImageEnclosMbour(agent);
 		else if (C_Parameters.PROTOCOL.equals(CAGES)) return getNameOfImageEnclosMbour(agent);
 		else if (C_Parameters.PROTOCOL.equals(HYBRID_UNIFORM)) return getNameOfImageEnclosMbour(agent);
@@ -248,7 +248,7 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 	 * @return la nouvelle couleur de l'agent */
 	public static Color getColor(I_SituatedThing agent) {
 		if (C_Parameters.PROTOCOL.equals(CHIZE)) return getColorChize(agent);
-		else if (C_Parameters.PROTOCOL.equals(GERBIL_PROTOCOL)) return getColorGerbil(agent);
+		else if (C_Parameters.PROTOCOL.equals(GERBIL)) return getColorGerbil(agent);
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) return getColorMbour(agent);
 		else if (C_Parameters.PROTOCOL.equals(CAGES)) return getColorMbour(agent);
 		else if (C_Parameters.PROTOCOL.equals(HYBRID_UNIFORM)) return getColorMbour(agent);

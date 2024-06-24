@@ -28,7 +28,7 @@
 		
 	<!-- PROTOCOL DEPENDENT -->
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
-		type="java.lang.String" defaultValue="CAGES" isReadOnly="true"
+		type="java.lang.String" defaultValue="rodents.CAGES" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<!-- reproduction (months using january=00.) -->
 	<parameter name="REPRO_START_Umonth" displayName="1f/ Reprod. season start (month, Jan=0)"
