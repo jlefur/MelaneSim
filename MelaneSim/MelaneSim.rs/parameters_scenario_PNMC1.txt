@@ -40,8 +40,9 @@
 		type="java.lang.Integer" defaultValue="10" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 
+                <!-- type="java.lang.String" defaultValue="20231128-TOPEX-ZEE2_GRILLEV2.1.txt" isReadOnly="false" -->
 	<parameter name="RASTER_FILE" displayName="1h/grid filename"
-		type="java.lang.String" defaultValue="20231128-TOPEX-ZEE2_GRILLEV2.1.GRD" isReadOnly="false"
+		type="java.lang.String" defaultValue="20231128-TOPEX-ZEE2_GRILLEV2.1.txt" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 
 	<!-- SIMULATION SETTING -->

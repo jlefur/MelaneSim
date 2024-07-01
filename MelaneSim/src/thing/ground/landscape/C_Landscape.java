@@ -113,8 +113,8 @@ public class C_Landscape implements I_ConstantStringRodents {
 	 * @param matriceLue the values read in the raster, bitmap<br>
 	 *            rev. JLF 11.2015 */
 	public void createGround(int[][] matriceLue) {
-		for (int i = 0; i < this.dimension_Ucell.width; i++) {
-			for (int j = 0; j < this.dimension_Ucell.height; j++) {
+		for (int i = this.dimension_Ucell.width - 1; i >= 0; i--) {
+			for (int j = this.dimension_Ucell.height - 1; j >= 0; j--) {
 				this.gridValueLayer.set(matriceLue[i][j], i, j);
 				this.grid[i][j] = new C_SoilCell(matriceLue[i][j], i, j);
 			}
@@ -334,17 +334,13 @@ public class C_Landscape implements I_ConstantStringRodents {
 			constructor.setAccessible(true);
 			incomer = (A_Animal) constructor.newInstance(genomeClass.newInstance());
 			// Production code should handle these exceptions more gracefully
-		}
-		catch (InstantiationException x1) {
+		} catch (InstantiationException x1) {
 			x1.printStackTrace();
-		}
-		catch (IllegalAccessException x1) {
+		} catch (IllegalAccessException x1) {
 			x1.printStackTrace();
-		}
-		catch (InvocationTargetException x1) {
+		} catch (InvocationTargetException x1) {
 			x1.printStackTrace();
-		}
-		catch (NoSuchMethodException x1) {
+		} catch (NoSuchMethodException x1) {
 			x1.printStackTrace();
 		}
 

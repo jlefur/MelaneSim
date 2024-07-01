@@ -41,7 +41,8 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 	public void init(ShapeFactory2D factory) {
 		this.factory = factory;
 		selectImg = new C_IconSelector();
-		if (C_Parameters.PROTOCOL.equals(CHIZE)) initChize();
+		if (C_Parameters.PROTOCOL.equals(PNMC_PK)) initPNMC();
+		else if (C_Parameters.PROTOCOL.equals(CHIZE)) initChize();
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) initEnclosMbour();
 		else if (C_Parameters.PROTOCOL.equals(DODEL)) initDodel();
 		else if (C_Parameters.PROTOCOL.equals(CAGES)) initEnclosMbour();
@@ -55,6 +56,10 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 		C_ContextCreator.protocol.setStyleAgent(this);
 	}
 
+	public void initPNMC() {
+		this.ELLIPSE_SCALE = .6f;
+		factory.registerImage(PLANKTON_ICON, selectImg.loadImage(PLANKTON_ICON));
+	}
 	public void initChize() {
 		this.ELLIPSE_SCALE = .6f;
 		factory.registerImage(VOLE_FEMALE_CHILD, selectImg.loadImage(VOLE_FEMALE_CHILD));

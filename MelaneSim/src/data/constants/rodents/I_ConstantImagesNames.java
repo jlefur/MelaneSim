@@ -7,6 +7,8 @@ public interface I_ConstantImagesNames {
 	public static final String $PATH = "icons/rodents/"; // path to images
 	public static final String ext = ".gif"; // file type extension for images
 
+	// PNMC
+	public static final String PLANKTON_ICON = "../PLANKTON";
 	// DODEL
 	public static final String MOUSE_FEMALE_CHILD = "MOUSE_FEMALE_CHILD";
 	public static final String MOUSE_FEMALE_ADULT = "MOUSE_FEMALE_ADULT";

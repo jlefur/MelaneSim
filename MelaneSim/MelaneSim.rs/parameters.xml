@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- fileName : parameters.xml -->
-<!-- protocolName : PNMC-plancton -->
+<!-- protocolName : CHIZE -->
 <parameters>
 
 	<!-- COMMON INTER-PROTOCOLS -->
@@ -20,7 +20,7 @@
 		defaultValue="false" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
 	<parameter name="VERBOSE" displayName="0e/ Display more EVENTS on map and console"
-		type="boolean" defaultValue="true" isReadOnly="false"
+		type="boolean" defaultValue="false" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
 	<parameter name="DISPLAY_MAP" displayName="0f/ Display CAPTION above ground (tip: unzoom)"
 		type="boolean" defaultValue="false" isReadOnly="false"
@@ -33,15 +33,13 @@
 	<parameter name="PROTOCOL" displayName="1a/ _________ PROTOCOL SPECIFIC _________"
 		type="java.lang.String" defaultValue="ocean.PNMC_plancton" isReadOnly="true"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
-	<parameter name="EXCLOS" displayName="1c/ Metapopulation(exclos)"
-		type="boolean" defaultValue="false" isReadOnly="false"
-		converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter" />
 	<parameter name="INIT_POP_SIZE" displayName="1d/ Initialization: Population size (indiv.)"
-		type="java.lang.Integer" defaultValue="10" isReadOnly="false"
+		type="java.lang.Integer" defaultValue="1110" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$IntConverter" />
 
+
 	<parameter name="RASTER_FILE" displayName="1h/grid filename"
-		type="java.lang.String" defaultValue="20231128-TOPEX-ZEE2_GRILLEV2.1.GRD" isReadOnly="false"
+		type="java.lang.String" defaultValue="20231128-TOPEX-ZEE2_GRILLEV2.1.txt" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 
 	<!-- SIMULATION SETTING -->

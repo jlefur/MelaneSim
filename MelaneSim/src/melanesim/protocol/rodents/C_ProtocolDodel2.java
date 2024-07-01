@@ -204,7 +204,7 @@ public class C_ProtocolDodel2 extends A_ProtocolFossorial implements I_ConstantD
 	protected void initPopulations() {
 		// randomlyAddHumanWalkers(1);// add human walkers
 		// addBurrowSystems(1);// C_Parameters.INIT_BURROW_POP_SIZE
-		// randomlyAddRodents(150);// add rodents within already created burrows C_Parameters.INIT_RODENT_POP_SIZE
+		// randomlyAddRodents(150);// add rodents within already created burrows C_Parameters.INIT_POP_SIZE
 		// randomlyAddTicks(15);
 		// randomlyAddBorrelia(25);
 		this.randomlyAddCat(15);

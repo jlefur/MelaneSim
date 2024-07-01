@@ -240,6 +240,9 @@ public class C_UserPanel extends JPanel implements UserPanelCreator, I_ConstantS
     private JLabel createTitleBlock() {
         String fileName = "";
         switch (C_Parameters.PROTOCOL) {
+        	case PNMC_PK :
+        		fileName = "icons/titlePlancton.gif";
+        		break;
             case CHIZE :
                 fileName = "icons/rodents/titleChize.jpg";
                 break;

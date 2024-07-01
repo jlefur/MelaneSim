@@ -22,6 +22,7 @@ import thing.A_Human;
 import thing.C_HumanCarrier;
 import thing.A_HumanUrban;
 import thing.C_OrnitodorosSonrai;
+import thing.C_Plankton;
 import thing.C_Rodent;
 import thing.C_RodentGerbil;
 import thing.C_RodentHouseMouse;
@@ -52,16 +53,16 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(new File($PATH + nomImage + ext));
-		}
-		catch (IOException e) {
-			System.err.println(">>>>> Cannot find "+$PATH + nomImage + ext);
+		} catch (IOException e) {
+			System.err.println(">>>>> Cannot find " + $PATH + nomImage + ext);
 			e.printStackTrace();
 		}
 		return img;
 	}
 	/** Renvoie le nom de l'image à utiliser pour l'agent en paramètre */
 	public String getNameOfImage(I_SituatedThing agent) {
-		if (C_Parameters.PROTOCOL.equals(CHIZE)) return getNameOfImageChize(agent);
+		if (C_Parameters.PROTOCOL.equals(PNMC_PK)) return getNameOfImagePNMC(agent);
+		else if (C_Parameters.PROTOCOL.equals(CHIZE)) return getNameOfImageChize(agent);
 		else if (C_Parameters.PROTOCOL.equals(GERBIL)) return getNameOfImageGerbil(agent);
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) return getNameOfImageEnclosMbour(agent);
 		else if (C_Parameters.PROTOCOL.equals(CAGES)) return getNameOfImageEnclosMbour(agent);
@@ -74,6 +75,9 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 		else if (C_Parameters.PROTOCOL.equals(DODEL2)) return getNameOfImageDodel2(agent);
 		else if (C_Parameters.PROTOCOL.equals(BANDIA)) return getNameOfImageBandia(agent);
 		else return getNameOfImageChize(agent);
+	}
+	public String getNameOfImagePNMC(I_SituatedThing agent) {
+		return PLANKTON_ICON;
 	}
 	public String getNameOfImageBandia(I_SituatedThing agent) {
 		if (agent instanceof C_Trap) {
@@ -149,11 +153,12 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 	public String getNameOfImageDodel2(I_SituatedThing agent) {
 		String imageName = this.getNameOfImageDodel(agent);
 		if (agent instanceof A_Organism) {
-			if (((A_Organism) agent).isa_Tag()) {//((C_HumanUrban) agent).getDesire().equals(WANDER)||
+			if (((A_Organism) agent).isa_Tag()) {// ((C_HumanUrban) agent).getDesire().equals(WANDER)||
 				((A_Organism) agent).setHasToSwitchFace(true);
 				return TAGGED;
-			}}
-			if (imageName != null) {
+			}
+		}
+		if (imageName != null) {
 			if (agent.getCurrentSoilCell() instanceof C_BurrowSystem) return BURROW;
 			if ((agent instanceof C_Rodent) && ((C_Rodent) agent).getDesire().equals(HIDE)) return MOUSE_HIDE;
 
@@ -176,7 +181,7 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 			else return CAT_YOUNG_FEMALE;
 		}
 		if (agent instanceof A_Human) {
-			if (((A_HumanUrban) agent).isa_Tag()) {//((C_HumanUrban) agent).getDesire().equals(WANDER)||
+			if (((A_HumanUrban) agent).isa_Tag()) {// ((C_HumanUrban) agent).getDesire().equals(WANDER)||
 				((A_Human) agent).setHasToSwitchFace(true);
 				return TAGGED;
 			}

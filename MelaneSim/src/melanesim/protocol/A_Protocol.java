@@ -275,11 +275,11 @@ public abstract class A_Protocol implements I_Protocol, I_ConstantStringRodents,
 	 * rev. jlf 09.2017 */
 	public void readUserParameters() {
 		try {
-			C_Parameters.INIT_RODENT_POP_SIZE = ((Integer) C_Parameters.parameters.getValue("INIT_POP_SIZE"))
+			C_Parameters.INIT_POP_SIZE = ((Integer) C_Parameters.parameters.getValue("INIT_POP_SIZE"))
 					.intValue();
 		}
 		catch (Exception e) {
-			C_Parameters.INIT_RODENT_POP_SIZE = 0;
+			C_Parameters.INIT_POP_SIZE = 0;
 		}
 		/** If true, display the affinity map, else display the value layer */
 		C_Parameters.DISPLAY_MAP = ((Boolean) C_Parameters.parameters.getValue("DISPLAY_MAP")).booleanValue();

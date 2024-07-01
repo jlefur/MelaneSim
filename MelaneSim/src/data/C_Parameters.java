@@ -42,7 +42,7 @@ public class C_Parameters implements I_ConstantStringRodents, I_ConstantPNMC_par
 	public static int TICK_MAX;// if 0 <-> infinity
 
 	// Protocol Fossorial
-	public static int INIT_RODENT_POP_SIZE;
+	public static int INIT_POP_SIZE;
 	public static int MAX_POP;// used to stop the simulation when population 'pullulate'; if 0 <-> infinity
 
 	// REPRODUCTION ATTRIBUTES //

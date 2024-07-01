@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public interface I_ConstantPNMC_particules {
 
 	// CHRONOGRAM FILE NAME
-	public static String CHRONO_FILENAME = "20240314_PNMC.jlf.csv";
+	public static String CHRONO_FILENAME = "/20240314_PNMC.jlf.csv";
 	public static int CELL_SIZE = 245; // DEFAULT : 15 //Junk Value
 	// SPATIAL PROJECTIONS NAMES
 	// options: 1) ascii (provide a grid.csv), 2) any other string, image (/ provide e.g. one *.gif,.jpg,.bmp).

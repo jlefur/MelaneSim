@@ -58,7 +58,8 @@ public class C_ReadRaster implements I_ConstantStringRodents {
 				// ... tant qu'elle a des éléments
 				while (st.hasMoreElements()) {
 					// on lit l'entier correspondant et on l'enregistre dans la matrice.
-					matrice[j][hauteur - i - 1] = Integer.parseInt((st.nextToken()));
+					matrice[j][i] = Integer.parseInt((st.nextToken())); // OCEAN
+//					matrice[j][hauteur - i - 1] = Integer.parseInt((st.nextToken())); // RODENTS
 					j++;
 				}
 				j = 0;

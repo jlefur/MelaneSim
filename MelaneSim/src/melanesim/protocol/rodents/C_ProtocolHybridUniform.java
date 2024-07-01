@@ -57,7 +57,7 @@ public class C_ProtocolHybridUniform extends A_Protocol {
 	//
 	/** Fills the context with dynamics agent for the first step of a simulation. The sex ratio is randomly generated, rev jlf 01.2018 */
 	public void initProtocol() {
-		int nbAgent = C_Parameters.INIT_RODENT_POP_SIZE;
+		int nbAgent = C_Parameters.INIT_POP_SIZE;
 		// TODO JLF 2014.08 code below should replaced with an upper method
 		C_RodentFossorial agent;
 		Dimension dim = this.landscape.getDimension_Ucell();

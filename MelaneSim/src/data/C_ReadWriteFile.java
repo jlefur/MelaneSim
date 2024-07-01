@@ -10,7 +10,7 @@ public class C_ReadWriteFile implements data.constants.rodents.I_ConstantStringR
 	 * @param url
 	 * @param fileName (with extension) */
 	public static BufferedReader openBufferReader(String url, String fileName) {
-		// System.out.println("C_ReadWriteFile.openBufferReader(): reading file " + url + fileName);
+		System.out.println("C_ReadWriteFile.openBufferReader(): reading file " + url + fileName);
 		try {
 			return new BufferedReader(new FileReader(url + fileName));
 		} catch (IOException ioe) {

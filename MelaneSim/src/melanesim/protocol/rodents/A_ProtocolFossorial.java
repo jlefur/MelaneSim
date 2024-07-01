@@ -45,13 +45,13 @@ public abstract class A_ProtocolFossorial extends A_Protocol {
 	protected void initPopulations() {
 		// add burrow systems and agents within
 		addBurrowSystems(C_Parameters.INIT_BURROW_POP_SIZE);
-		randomlyAddRodents(C_Parameters.INIT_RODENT_POP_SIZE);// add rodents within already created burrows
+		randomlyAddRodents(C_Parameters.INIT_POP_SIZE);// add rodents within already created burrows
 		// clean unused burrows
 		for (C_BurrowSystem burrow : burrowInspector.getBurrowList())
 			if (burrow.getOccupantList().isEmpty()) burrow.setDead(true); // end of clean
 		System.out.println("C_ProtocolFossorial.init(): " + burrowInspector.getNbBurrows() + "(asked: " + C_Parameters.INIT_BURROW_POP_SIZE
 				+ ") burrows created");
-		System.out.println("C_ProtocolFossorial.init(): Population of " + C_Parameters.INIT_RODENT_POP_SIZE
+		System.out.println("C_ProtocolFossorial.init(): Population of " + C_Parameters.INIT_POP_SIZE
 				+ " fossorial rodents created and positioned randomly in burrow systems");
 	}
 	@Override

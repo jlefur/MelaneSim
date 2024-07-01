@@ -13,7 +13,7 @@ import data.constants.rodents.I_ConstantStringRodents;
 
 public class C_Style2dAffinityType implements ValueLayerStyleOGL, I_ConstantNumeric, I_ConstantStringRodents {
 	protected ValueLayer layer;// the layer to represent
-
+	//http://vminfotron-dev.mpl.ird.fr:8080/masto2_2/model/memos/memo16_ImplantationRaster.htm
 	Map<Integer, Color> colorMap;// the colormap is used to associate a color at each value of the layer
 	public C_Style2dAffinityType() {
 		// we try to get back the colormodel which should be read in the same time as the raster
@@ -23,8 +23,12 @@ public class C_Style2dAffinityType implements ValueLayerStyleOGL, I_ConstantNume
 		if (this.colorMap == null) {
 			System.out.print("C_Style2dAffinityType(): colormap not found; creating colormap");
 			this.colorMap = new HashMap<Integer, Color>();
-			if (C_Parameters.PROTOCOL.equals(CHIZE)) {
+			if (C_Parameters.PROTOCOL.equals(PNMC_PK)) {
 			    this.colorMap = colorMapChizeGrid(this.colorMap);
+				System.out.print(" PNMC particules");
+			}
+			else if (C_Parameters.PROTOCOL.equals(CHIZE)) {
+				this.colorMap = colorMapChizeGrid(this.colorMap);
 				System.out.print(" Chize");
 			}
 			else if (C_Parameters.PROTOCOL.contains(CENTENAL)) {

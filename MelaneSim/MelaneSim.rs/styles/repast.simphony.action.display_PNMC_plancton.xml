@@ -1,5 +1,5 @@
 <repast.simphony.visualization.engine.DefaultDisplayDescriptor>
-	<name>raster Chize</name>
+	<name>raster PNMC</name>
 	<type>TWO_D</type>
 	<styles>
 		<entry>
@@ -20,11 +20,11 @@
 	<editedStyles>
 		<entry>
 			<string>presentation.display.C_Background</string>
-			<string>rodents\presentation.display.C_Background.style_PNMC.01.xml</string>
+			<string>presentation.display.C_Background.style_PNMC.01.xml</string>
 		</entry>
 		<entry>
 			<string>thing.ground.C_LandPlot</string>
-			<string>rodents\thing.ground.C_LandPlot.style_PNMC.01.xml</string>
+			<string>thing.ground.C_LandPlot.style_PNMC.01.xml</string>
 		</entry>
 		<entry>
 			<string>thing.C_Plankton</string>

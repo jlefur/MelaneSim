@@ -77,8 +77,8 @@ public class C_ProtocolDodel extends A_Protocol {
 		this.nbWeekCount = 0;
 		this.marketDay = 1;
 		this.currentDayOfWeek = protocolCalendar.get(Calendar.DAY_OF_WEEK) - 1;
-		// randomlyAddRodents(C_Parameters.INIT_RODENT_POP_SIZE);// add rodents within already created burrows
-		// System.out.println("C_ProtocolRodents(): Population of " + C_Parameters.INIT_RODENT_POP_SIZE
+		// randomlyAddRodents(C_Parameters.INIT_POP_SIZE);// add rodents within already created burrows
+		// System.out.println("C_ProtocolRodents(): Population of " + C_Parameters.INIT_POP_SIZE
 		// + " rodents created and positioned randomly");
 		super.initProtocol();// manage inspectors and files after everything
 	}

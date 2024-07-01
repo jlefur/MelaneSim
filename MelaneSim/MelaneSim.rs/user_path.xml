@@ -1,6 +1,8 @@
 <model name="SIMmasto0">
 	<classpath>
+		<agents path="../bin, ../bin-groovy" filter="thing.C_Plankton" />
 		<agents path="../bin, ../bin-groovy" filter="thing.ground.C_SoilCellSavanna" />
+		<agents path="../bin, ../bin-groovy" filter="thing.ground.C_SoilCell" />
 		<agents path="../bin, ../bin-groovy" filter="thing.ground.C_SoilCellWall" />
 		<agents path="../bin, ../bin-groovy" filter="thing.ground.C_Vegetation" />
 		<agents path="../bin, ../bin-groovy" filter="thing.ground.C_Trap" />
