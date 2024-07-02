@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import data.constants.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantGerbil;
-import data.constants.rodents.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_Calendar;
 import melanesim.protocol.A_Protocol;

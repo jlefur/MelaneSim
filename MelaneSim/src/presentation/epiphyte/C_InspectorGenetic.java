@@ -14,7 +14,7 @@ import thing.dna.C_XsomePairMicrosat;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import melanesim.protocol.A_Protocol;
 
 /** Retrieves information on genes and alleles of the whole population. <br>

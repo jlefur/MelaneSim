@@ -6,7 +6,7 @@ import java.util.Map;
 
 import presentation.dataOutput.C_FileWriter;
 import data.C_ReadWriteFile;
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 
 /** Can read a raster and convert it to a chrono or vice versa

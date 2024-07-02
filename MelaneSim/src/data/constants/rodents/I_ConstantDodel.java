@@ -1,5 +1,7 @@
 package data.constants.rodents;
 
+import data.constants.I_ConstantNumeric;
+
 public interface I_ConstantDodel extends I_ConstantNumeric {
 
 /*	public static final int DAWN_START_Uhour = 6;

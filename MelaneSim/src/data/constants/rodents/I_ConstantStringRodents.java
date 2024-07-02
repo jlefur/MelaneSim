@@ -6,6 +6,8 @@ import java.util.TreeSet;
 
 import javax.media.j3d.Switch;
 
+import data.constants.I_ConstantNumeric;
+
 /** - Constant names concerning types names shared within all protocols<br>
  * - Strings as well as unnecessary numbers are meant to disappear from the source code (see also I_numeric_constants and other
  * data/I_???_constants.java) <br>

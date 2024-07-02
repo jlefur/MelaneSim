@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 import presentation.dataOutput.C_Information;
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_Calendar;
 import melanesim.C_ContextCreator;

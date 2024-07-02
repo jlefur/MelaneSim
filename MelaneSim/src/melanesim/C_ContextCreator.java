@@ -2,7 +2,7 @@ package melanesim;
 
 import cern.jet.random.engine.RandomEngine;
 import data.C_Parameters;
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.protocol.A_Protocol;

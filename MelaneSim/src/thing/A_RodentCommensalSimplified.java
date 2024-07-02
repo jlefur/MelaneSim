@@ -3,7 +3,7 @@ package thing;
 import java.util.Calendar;
 import java.util.TreeSet;
 
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import melanesim.protocol.A_Protocol;
 import thing.dna.I_DiploidGenome;
 import thing.ground.C_Vehicle;

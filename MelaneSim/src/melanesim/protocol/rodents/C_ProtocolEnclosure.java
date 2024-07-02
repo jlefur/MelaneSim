@@ -13,7 +13,7 @@ import thing.dna.C_GenomeEucaryote;
 import thing.dna.species.rodents.C_GenomeMastoErythroleucus;
 import thing.dna.species.rodents.C_GenomeMastoNatalensis;
 import data.C_Parameters;
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import melanesim.protocol.A_Protocol;
 
 /** author J.Le Fur, A.Comte 03/2012 / rev. J.Le Fur feb.2013 */

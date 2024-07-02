@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 
 import data.C_Parameters;
+import data.constants.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantGerbil;
 import data.constants.rodents.I_ConstantImagesNames;
-import data.constants.rodents.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.C_ContextCreator;
 import repast.simphony.engine.environment.RunEnvironment;

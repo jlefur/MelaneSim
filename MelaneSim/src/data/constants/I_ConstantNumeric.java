@@ -1,7 +1,9 @@
 /* This source code is licensed under a BSD licence as detailed in file SIMmasto_0.license.txt */
-package data.constants.rodents;
+package data.constants;
 
 import java.util.ArrayList;
+
+import data.constants.rodents.I_ConstantStringRodents;
 
 /** Centralizes all shared numbered variables since software specifications requires no numbers in the java sources.<br>
  * protocols may overload it with their specific constants. Was formerly I_sim_constants

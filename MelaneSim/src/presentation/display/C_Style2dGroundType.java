@@ -8,7 +8,7 @@ import repast.simphony.valueLayer.ValueLayer;
 import repast.simphony.visualizationOGL2D.ValueLayerStyleOGL;
 import thing.ground.landscape.C_Landscape;
 import data.C_Parameters;
-import data.constants.rodents.I_ConstantNumeric;
+import data.constants.I_ConstantNumeric;
 import data.constants.rodents.I_ConstantStringRodents;
 import data.constants.rodents.I_ConstantTransportation;
 public class C_Style2dGroundType implements ValueLayerStyleOGL, I_ConstantNumeric, I_ConstantStringRodents, I_ConstantTransportation {
