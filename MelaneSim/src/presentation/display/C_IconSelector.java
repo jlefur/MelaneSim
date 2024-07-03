@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import data.C_Parameters;
+import data.constants.I_ConstantPNMC_particules;
 import data.constants.rodents.I_ConstantImagesNames;
 import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
@@ -45,7 +46,7 @@ import thing.ground.C_Trap;
 
 /** Gestionnaire d'images / Icons may be either gif image files or geonetric icons
  * @author A Realini, rev. JLF 10.2015 */
-public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImagesNames {
+public class C_IconSelector implements I_ConstantStringRodents, I_ConstantPNMC_particules, I_ConstantImagesNames {
 
 	/** Charge une image
 	 * @param nomImage : le nom de l'image à charger */
@@ -252,7 +253,8 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantImages
 	 * d'ellipses et non d'images)
 	 * @return la nouvelle couleur de l'agent */
 	public static Color getColor(I_SituatedThing agent) {
-		if (C_Parameters.PROTOCOL.equals(CHIZE)) return getColorChize(agent);
+		if (C_Parameters.PROTOCOL.equals(PNMC_PK)) return Color.yellow;
+		else if (C_Parameters.PROTOCOL.equals(CHIZE)) return getColorChize(agent);
 		else if (C_Parameters.PROTOCOL.equals(GERBIL)) return getColorGerbil(agent);
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) return getColorMbour(agent);
 		else if (C_Parameters.PROTOCOL.equals(CAGES)) return getColorMbour(agent);

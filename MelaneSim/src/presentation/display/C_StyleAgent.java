@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import data.C_Parameters;
 import data.constants.I_ConstantNumeric;
+import data.constants.I_ConstantPNMC_particules;
 import data.constants.rodents.I_ConstantGerbil;
 import data.constants.rodents.I_ConstantImagesNames;
 import data.constants.rodents.I_ConstantStringRodents;
@@ -26,7 +27,7 @@ import thing.I_SituatedThing;
 /** Style des agents "animaux". Définit une icône ou une ellipse pour chaque agent au lancement de la simulation en fonction de
  * son sexe et la fait varier suivant son âge.
  * @author A Realini 2011 */
-public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStringRodents, I_ConstantNumeric,
+public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStringRodents, I_ConstantPNMC_particules, I_ConstantNumeric,
 		I_ConstantImagesNames {
 	private float imageScale = IMAGE_SCALE; // Taille d'une image initiale .15
 	// Ellipse scales (nb: 50x50-> .3)
@@ -57,7 +58,7 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 	}
 
 	public void initPNMC() {
-		this.ELLIPSE_SCALE = .6f;
+		this.ELLIPSE_SCALE = 1.8f;
 		factory.registerImage(PLANKTON_ICON, selectImg.loadImage(PLANKTON_ICON));
 	}
 	public void initChize() {

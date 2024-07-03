@@ -1,23 +1,22 @@
 package melanesim.protocol;
 
-import java.util.Calendar;
-
 import com.vividsolutions.jts.geom.Coordinate;
 
+import data.C_Chronogram;
 import data.C_Parameters;
 import data.constants.I_ConstantPNMC_particules;
+import data.constants.rodents.I_ConstantGerbil;
 import data.converters.C_ConvertGeographicCoordinates;
 import presentation.display.C_Background;
 import repast.simphony.context.Context;
 import thing.C_Plankton;
 import thing.dna.C_GenomeAnimalia;
-import thing.ground.C_BurrowSystem;
 import thing.ground.C_LandPlot;
 import thing.ground.C_SoilCell;
 import thing.ground.I_Container;
 
-/** Common voles' colonies within a dynamic agricultural landscape
- * @author J.Le Fur, A.Comte 03.2012 / J.Le Fur 07.2012, 07.2014 */
+/** Plankton particles moved by surface currents
+ * @author J.Le Fur 06.2024 */
 
 public class C_Protocol_PNMC_particules extends A_Protocol implements I_ConstantPNMC_particules {
 	//
@@ -31,6 +30,8 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 	 * Author J.Le Fur 02.2013 */
 	public C_Protocol_PNMC_particules(Context<Object> ctxt) {
 		super(ctxt);
+		// Create and build the dataFromChrono from the csv file
+		this.chronogram = new C_Chronogram(CHRONO_FILENAME);
 		// Position landplots at the barycentre of cells
 		for (C_LandPlot lp : this.landscape.getAffinityLandPlots()) {
 			double xx = 0., yy = 0.;
@@ -44,8 +45,7 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 			lp.setCurrentSoilCell(this.landscape.getGrid()[(int) xx][(int) yy]);
 			lp.bornCoord_Umeter = this.landscape.getThingCoord_Umeter(lp.getCurrentSoilCell());
 		}
-		// facilityMap = new C_Background(-.05, 26, 27); //chize 1
-		facilityMap = new C_Background(-.1, 27 - .4, 32 - .4); // chize 2
+		facilityMap = new C_Background(-2.4, 206., 134.); 
 	}
 	//
 	// METHODS
@@ -77,7 +77,7 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 				for (int j = 0; j < grid_height; j++) {
 					if (countHeight == interval) {
 						cell = this.landscape.getGrid()[i][j];
-						if (cell.getAffinity() < 7) {// TODO number in source 2024.07.01 affinity min for land
+						if (cell.getAffinity() < TERRESTRIAL_MIN_AFFINITY) {
 							this.contextualizeNewThingInContainer(createPlankton(), cell);
 							particleCount++;
 						}
@@ -101,12 +101,12 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 	protected void blackMap() {
 		for (int i = 0; i < this.landscape.getDimension_Ucell().getWidth(); i++)
 			for (int j = 0; j < this.landscape.getDimension_Ucell().getHeight(); j++) {
-					if (this.landscape.getValueLayer().get(i, j) < 7) // marine area
-						this.landscape.getValueLayer().set(BLACK_MAP_COLOR, i, j);
+				if (this.landscape.getValueLayer().get(i, j) < TERRESTRIAL_MIN_AFFINITY) // marine area
+					this.landscape.getValueLayer().set(BLACK_MAP_COLOR, i, j);
 			}
 	}
 	@Override
-	/** Check black map*/
+	/** Check black map */
 	public void readUserParameters() {
 		super.readUserParameters();
 		boolean oldValueBlackMap = C_Parameters.BLACK_MAP;

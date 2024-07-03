@@ -18,16 +18,19 @@ import java.util.StringTokenizer;
 
 import javax.imageio.ImageIO;
 
-import data.constants.rodents.I_ConstantStringRodents;
+import data.constants.I_ConstantPNMC_particules;
 import thing.ground.landscape.C_Landscape;
 
 /** Two utilities to read either an ASCII or bitmap raster and return a grid in SimMasto format (the image must be in grey levels
  * or in 256 or less)
  * @see C_Landscape
  * @author Quentin Baduel, 2008, rev. JLF 10.2015 */
-public class C_ReadRaster implements I_ConstantStringRodents {
-	/** Downloads grid in ASCII text format : 1st line "DSAA" 2nd line number of rows 3rd line number of columns 4th line min and
-	 * max values remaining: line 0: column 0 to j-1 (delimiter blank space) line i line i-1
+public class C_ReadRaster implements I_ConstantPNMC_particules {
+	/** Download grid in ASCII text format : 1st line "DSAA" <br>
+	 * FOR RODENTS RASTERS: 2nd line number of rows 3rd line number of columns 4th line min and max values remaining: line 0:
+	 * column 0 to j-1 (delimiter blank space) line i line i-1 <br>
+	 * FOR OCEAN RASTERS (compatible surfer): 2nd line number of columns number of rows / 3rd line min and max x / 4th line min
+	 * and max y / 5th line: min and max of values / remaining: line 0: column 0 to j-1 (delimiter blank space) line i line i-1
 	 * @param url
 	 * @return matrix of affinities (or whatever) */
 	public static int[][] txtRasterLoader(String url) {
@@ -43,10 +46,19 @@ public class C_ReadRaster implements I_ConstantStringRodents {
 			InputStreamReader isr = new InputStreamReader(in);
 			BufferedReader lecteur = new BufferedReader(isr);
 			lecteur.readLine();// DSAA
+			int largeur, hauteur;
 			st = new StringTokenizer(lecteur.readLine());
-			int largeur = Integer.parseInt(st.nextToken());
-			st = new StringTokenizer(lecteur.readLine());
-			int hauteur = Integer.parseInt(st.nextToken());
+			if (C_Parameters.PROTOCOL.equals(PNMC_PK)) {
+				largeur = Integer.parseInt((st.nextToken()));
+				hauteur = Integer.parseInt((st.nextToken()));
+					lecteur.readLine();
+					lecteur.readLine();
+				}
+			else {// Rodents case
+				largeur = Integer.parseInt(st.nextToken());
+				st = new StringTokenizer(lecteur.readLine());
+				hauteur = Integer.parseInt(st.nextToken());
+			}
 			matrice = new int[largeur][hauteur];
 			lecteur.readLine();
 			int i = 0;
@@ -59,7 +71,7 @@ public class C_ReadRaster implements I_ConstantStringRodents {
 				while (st.hasMoreElements()) {
 					// on lit l'entier correspondant et on l'enregistre dans la matrice.
 					matrice[j][i] = Integer.parseInt((st.nextToken())); // OCEAN
-//					matrice[j][hauteur - i - 1] = Integer.parseInt((st.nextToken())); // RODENTS
+					// matrice[j][hauteur - i - 1] = Integer.parseInt((st.nextToken())); // RODENTS
 					j++;
 				}
 				j = 0;
@@ -122,12 +134,13 @@ public class C_ReadRaster implements I_ConstantStringRodents {
 			}
 			Raster rasterLu = img.getData();
 			matriceLue = new int[rasterLu.getWidth()][rasterLu.getHeight()];
-			System.out.println("C_ReadRaster.imgRasterLoader(), image size: " + rasterLu.getWidth() + "," + rasterLu.getHeight());
+			System.out.println("C_ReadRaster.imgRasterLoader(), image size: " + rasterLu.getWidth() + "," + rasterLu
+					.getHeight());
 			for (int i = 0; i < matriceLue.length; i++) {
 				for (int j = 0; j < matriceLue[0].length; j++) {
 					Object tab = null;
 					Object dataElement = rasterLu.getDataElements(i, j, tab);
-//					 System.out.println(o.getClass().getCanonicalName());
+					// System.out.println(o.getClass().getCanonicalName());
 					rasterLu.getSampleModel().getDataType();
 					if (dataElement != null && dataElement instanceof byte[]) {
 						byte[] tab_byte = (byte[]) dataElement;
