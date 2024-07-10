@@ -188,8 +188,8 @@ public class C_LandscapeNetwork extends C_Landscape {
 				sc0 = (C_SoilCellGraphed) grid[i][j];
 				if (sc0.isOfGroundType(groundType) && !newLandPlots.contains(sc0.getLandPlot(groundType))) {
 					// CREATE LANDPLOT
-					if (groundType.equals(CITY_EVENT)) {
-						if (sc0.getGroundTypes().contains(MARKET_EVENT)) {
+					if (groundType.equals(I_ConstantStringRodents.CITY_EVENT)) {
+						if (sc0.getGroundTypes().contains(I_ConstantStringRodents.MARKET_EVENT)) {
 							newLandPlot = new C_Market(this);
 							((C_Market) newLandPlot).setMarketDay_UCalendar(sc0.getAffinity());
 						}

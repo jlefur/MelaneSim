@@ -7,6 +7,18 @@ import java.util.List; // TODO PAM de JLF 2017.02 pourquoi pas un treeset ?
 import java.util.TimeZone;
 import java.util.TreeSet;
 
+import com.vividsolutions.jts.geom.Coordinate;
+
+import data.C_Chronogram;
+import data.C_Event;
+import data.C_Parameters;
+import data.constants.I_ConstantNumeric;
+import data.constants.I_ConstantString;
+import data.converters.C_ConvertTimeAndSpace;
+import melanesim.C_Calendar;
+import melanesim.C_ContextCreator;
+import melanesim.util.C_VariousUtilities;
+import melanesim.util.C_sound;
 import presentation.dataOutput.C_FileWriter;
 import presentation.display.C_Background;
 import presentation.display.C_CustomPanelSet;
@@ -23,28 +35,14 @@ import repast.simphony.util.collections.IndexedIterable;
 import thing.A_Animal;
 import thing.A_NDS;
 import thing.A_VisibleAgent;
-import thing.C_Plankton;
 import thing.C_Rodent;
 import thing.I_SituatedThing;
 import thing.dna.C_GenomeAmniota;
 import thing.ground.I_Container;
 import thing.ground.landscape.C_Landscape;
-
-import com.vividsolutions.jts.geom.Coordinate;
-
-import data.C_Chronogram;
-import data.C_Event;
-import data.C_Parameters;
-import data.constants.I_ConstantNumeric;
-import data.constants.rodents.I_ConstantStringRodents;
-import data.converters.C_ConvertTimeAndSpace;
-import melanesim.C_Calendar;
-import melanesim.C_ContextCreator;
-import melanesim.util.C_VariousUtilities;
-import melanesim.util.C_sound;
 /** Master class for the various melanesim.protocol of the SimMasto platform
  * @author Jean Le Fur & Pape Adama Mboup 07.2012, rev. JLF 02.2013, 08.2014, 10.2014, 03.2021 */
-public abstract class A_Protocol implements I_Protocol, I_ConstantStringRodents, I_ConstantNumeric {
+public abstract class A_Protocol implements I_Protocol, I_ConstantString, I_ConstantNumeric {
 	//
 	// FIELDS
 	//

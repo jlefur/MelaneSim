@@ -27,8 +27,8 @@ import thing.I_SituatedThing;
 /** Style des agents "animaux". Définit une icône ou une ellipse pour chaque agent au lancement de la simulation en fonction de
  * son sexe et la fait varier suivant son âge.
  * @author A Realini 2011 */
-public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStringRodents, I_ConstantPNMC_particules, I_ConstantNumeric,
-		I_ConstantImagesNames {
+public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStringRodents, I_ConstantPNMC_particules,
+		I_ConstantNumeric, I_ConstantImagesNames {
 	private float imageScale = IMAGE_SCALE; // Taille d'une image initiale .15
 	// Ellipse scales (nb: 50x50-> .3)
 	private float ELLIPSE_SCALE = 1.5f;
@@ -58,8 +58,10 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 	}
 
 	public void initPNMC() {
-		this.ELLIPSE_SCALE = 1.8f;
+		this.ELLIPSE_SCALE = 2.8f;
+		this.imageScale = 1.f;
 		factory.registerImage(PLANKTON_ICON, selectImg.loadImage(PLANKTON_ICON));
+		factory.registerImage(TAGGED, selectImg.loadImage(TAGGED));
 	}
 	public void initChize() {
 		this.ELLIPSE_SCALE = .6f;
@@ -281,7 +283,8 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 		}
 		if (C_Parameters.IMAGE) {
 			if (object instanceof A_Organism) {
-				if (((A_Organism) object).isa_Tag()) return this.imageScale * 5;}
+				if (((A_Organism) object).isa_Tag()) return this.imageScale * 5;
+			}
 			if (object instanceof A_HumanUrban) {
 				if (((A_HumanUrban) object).isa_Tag()) return this.imageScale * 5;
 				if (!((A_Animal) object).getDesire().equals(REST)) return this.imageScale * 2;// TODO number in source JLF 2021.07

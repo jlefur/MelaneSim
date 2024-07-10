@@ -110,40 +110,6 @@ public class C_Style2dAffinityType implements ValueLayerStyleOGL, I_ConstantNume
         colorMap.put(23, new Color(13, 255, 114)); // BAKERY
 		return colorMap;
 	}
-	public Map<Integer, Color> colorMapDodel2_old(Map<Integer, Color> colorMap) {
-		colorMap = new HashMap<Integer, Color>();
-		// R G B red green blue
-		colorMap.put(0, new Color(243, 240, 233)); //  ground cell
-		colorMap.put(1, new Color(155, 155, 155)); // workshop
-		colorMap.put(2, new Color(255, 204, 153)); // Bakery
-		colorMap.put(3, new Color(255, 60, 255)); // Shop
-		colorMap.put(4, new Color(255, 245, 24)); // Office
-		colorMap.put(5, new Color(243, 240, 233)); // Hut 242, 226, 9
-		colorMap.put(6, new Color(237, 180, 23)); // Room
-		colorMap.put(7, new Color(0, 0, 0)); // Hairdresser 255, 0, 0
-		colorMap.put(8, new Color(197, 216, 21)); // Kitchen
-		colorMap.put(9, new Color(197, 216, 21)); // Dibiterien
-		colorMap.put(10, new Color(0, 255, 64)); // Enclosure
-		colorMap.put(11, new Color(242, 255, 99)); // Garage
-		colorMap.put(12, new Color(17, 178, 151)); // Garden
-		colorMap.put(13, new Color(103, 200, 255)); // Laboratory
-		colorMap.put(14, new Color(0, 128, 128)); // Magazin
-		colorMap.put(15, new Color(0, 251, 251)); // Mosque
-		colorMap.put(16, new Color(255, 0, 0)); // Mill
-		colorMap.put(17, new Color(247, 210, 240)); // Hardware store
-		colorMap.put(18, new Color(0, 200, 0)); // Restaurant
-		colorMap.put(19, new Color(128, 64, 64)); // Ruined
-		colorMap.put(20, new Color(0, 0, 255)); // Class
-		colorMap.put(21, new Color(255, 128, 64)); // Living room
-		colorMap.put(22, new Color(184, 96, 37)); // Tangana
-		colorMap.put(23, new Color(0, 128, 255)); // Bulding
-		colorMap.put(24, new Color(0, 0, 0)); // Wall
-		colorMap.put(25, new Color(221, 239, 247)); // House
-		colorMap.put(26, new Color(180, 177, 92)); // Market
-		colorMap.put(27, new Color(0, 0, 128)); // National Road
-		colorMap.put(28, new Color(128, 64, 64)); // Track
-		return colorMap;
-	}
 	public Map<Integer, Color> colorMapCentenalGrid(Map<Integer, Color> colorMap) {
 		colorMap = new HashMap<Integer, Color>();
 		// R G B red green blue

@@ -2,7 +2,7 @@ package data.constants.rodents;
 
 import data.constants.I_ConstantNumeric;
 
-public interface I_ConstantBandia extends I_ConstantNumeric {
+public interface I_ConstantBandia extends I_ConstantNumeric, I_ConstantStringRodents {
 
 	// la taille de la grille n'est pas conforme, il y a à peu près 130 mètres de chaque côté. J'ai joué sur la taille d'une
 	// cellule et les intervalles entre pièges (sachant que c'est transformé en int pour la grille et donc on a peu de marge de

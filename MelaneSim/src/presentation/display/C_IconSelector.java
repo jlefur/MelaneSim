@@ -78,7 +78,11 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantPNMC_p
 		else return getNameOfImageChize(agent);
 	}
 	public String getNameOfImagePNMC(I_SituatedThing agent) {
-		return PLANKTON_ICON;
+		if (agent instanceof A_Organism && ((A_Organism) agent).isa_Tag()) {
+				((A_Organism) agent).setHasToSwitchFace(true);
+				return TAGGED;
+			}
+			else return PLANKTON_ICON;
 	}
 	public String getNameOfImageBandia(I_SituatedThing agent) {
 		if (agent instanceof C_Trap) {
@@ -253,7 +257,7 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantPNMC_p
 	 * d'ellipses et non d'images)
 	 * @return la nouvelle couleur de l'agent */
 	public static Color getColor(I_SituatedThing agent) {
-		if (C_Parameters.PROTOCOL.equals(PNMC_PK)) return Color.yellow;
+		if (C_Parameters.PROTOCOL.equals(PNMC_PK)) return Color.green;
 		else if (C_Parameters.PROTOCOL.equals(CHIZE)) return getColorChize(agent);
 		else if (C_Parameters.PROTOCOL.equals(GERBIL)) return getColorGerbil(agent);
 		else if (C_Parameters.PROTOCOL.equals(ENCLOSURE)) return getColorMbour(agent);

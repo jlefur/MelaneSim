@@ -17,7 +17,7 @@ import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
 import data.C_ReadRaster;
-import data.constants.rodents.I_ConstantStringRodents;
+import data.constants.I_ConstantString;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.epiphyte.C_InspectorOrnithodorosSonrai;
@@ -33,6 +33,7 @@ import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.ContextUtils;
 import repast.simphony.valueLayer.GridValueLayer;
 import thing.A_Animal;
+import thing.A_Organism;
 import thing.A_VisibleAgent;
 import thing.C_OrnitodorosSonrai;
 import thing.C_Rodent;
@@ -51,7 +52,7 @@ import thing.ground.I_Container;
  * @author Baduel 2009.04, Le Fur 2009.12, Longueville 2011.02, Le Fur 02.2011, 07.2012, 04.2015<br>
  *         rev. JLF 10.2015, 11.2015 - was formerly C_Raster <br>
  *         TODO JLF 2020.04 Should be normally in ground package */
-public class C_Landscape implements I_ConstantStringRodents {
+public class C_Landscape implements I_ConstantString {
 	//
 	// FIELDS
 	//
@@ -220,6 +221,7 @@ public class C_Landscape implements I_ConstantStringRodents {
 			// Move the agent by mean of the projection's methods
 			this.continuousSpace.moveByDisplacement(thing, distanceDeplacement_Ucs.x, distanceDeplacement_Ucs.y);
 			if (thing instanceof A_Animal && !((A_Animal) thing).isTrappedOnBoard()) this.checkAndMoveToNewCell(thing);
+			else if (thing instanceof A_Organism) this.checkAndMoveToNewCell(thing);
 		}
 	}
 	/** Compute the half cell of diagonal */
@@ -247,7 +249,7 @@ public class C_Landscape implements I_ConstantStringRodents {
 	 * @param currentPosition_Ucs
 	 * @param moveDistance_Ucs
 	 * @return The distance of displacement in cs */
-	private Coordinate checkGoalPosition(NdPoint currentPosition_Ucs, Coordinate moveDistance_Ucs,
+	protected Coordinate checkGoalPosition(NdPoint currentPosition_Ucs, Coordinate moveDistance_Ucs,
 			A_VisibleAgent agent) {
 		NdPoint goalPoint_Ucs = new NdPoint(currentPosition_Ucs.getX() + moveDistance_Ucs.x, currentPosition_Ucs.getY()
 				+ moveDistance_Ucs.y);

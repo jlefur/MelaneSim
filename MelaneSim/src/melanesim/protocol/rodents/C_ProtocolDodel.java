@@ -15,13 +15,14 @@ import thing.dna.species.rodents.C_GenomeMusMusculus;
 import thing.ground.C_SoilCell;
 import thing.ground.I_Container;
 import data.C_Parameters;
+import data.constants.rodents.I_ConstantStringRodents;
 import data.rodents.C_CircadianAffinitiesMus;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 
 /** author J.Le Fur & M.Diakhate 07.2014, rev. JLF 10.2014, 03.2018 */
 
-public class C_ProtocolDodel extends A_Protocol {
+public class C_ProtocolDodel extends A_Protocol implements I_ConstantStringRodents {
 	//
 	// FIELDS
 	//

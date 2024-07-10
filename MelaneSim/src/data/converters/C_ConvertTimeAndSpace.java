@@ -65,7 +65,7 @@ public class C_ConvertTimeAndSpace {
 	}
 
 	/** Convert speed ex : 60km/h to X u_meter/tick */
-	public static double convertSpeed_UspaceByTick(int speedValue, String spaceUnit, String timeUnit) { // 60, km, h -> 60km/h
+	public static double convertSpeed_UspaceByTick(double speedValue, String spaceUnit, String timeUnit) { // 60, km, h -> 60km/h
 		return Math.round((speedValue * convertSpaceUnitToRasterUnit(spaceUnit) * (double) tick_Ucalendar)
 				/ _UcalendarTo_Utick(timeUnit));
 	}

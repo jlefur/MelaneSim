@@ -6,7 +6,7 @@
 	<!-- COMMON INTER-PROTOCOLS -->
 	<!-- Time scale -->
 	<parameter name="TICK_UNIT_Ucalendar" displayName="0a/ Tick unit (ms,s,m,h,d,mon,y)"
-		type="java.lang.String" defaultValue="D" isReadOnly="false"
+		type="java.lang.String" defaultValue="H" isReadOnly="false"
 		converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter" />
 	<parameter name="TICK_LENGTH_Ucalendar" displayName="0b/ Tick length"
 		type="java.lang.Integer" defaultValue="3" isReadOnly="false"

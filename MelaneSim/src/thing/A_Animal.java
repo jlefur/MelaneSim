@@ -465,7 +465,7 @@ public abstract class A_Animal extends A_Organism implements I_ConstantNumeric {
 	public void setTrappedOnBoard(boolean status) {
 		this.trappedOnBoard = status;
 		this.hasToSwitchFace = true;
-		if (status) this.speed_UmeterByTick = this.speed_UmeterByTick / 10.;// TODO number in source 2017.05 JLF & MS
+		if (status) this.speed_UmeterByTick = this.speed_UmeterByTick / 10.;// TODO number in source 2017.05 JLF & MS decrease speed when trapped on board
 		else
 			this.speed_UmeterByTick = ((C_GenomeAnimalia) this.genome).getSpeed_UmeterByDay()
 					/ C_ConvertTimeAndSpace.oneDay_Utick;

@@ -3,20 +3,13 @@ package thing.ground.landscape;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import com.vividsolutions.jts.geom.Coordinate;
-
-import data.C_Parameters;
 import data.constants.rodents.I_ConstantDodel2;
 import melanesim.protocol.A_Protocol;
 import repast.simphony.context.Context;
-import repast.simphony.space.continuous.NdPoint;
-import thing.A_Animal;
-import thing.A_VisibleAgent;
 import thing.ground.C_Concession;
 import thing.ground.C_LandPlot;
 import thing.ground.C_Room;
