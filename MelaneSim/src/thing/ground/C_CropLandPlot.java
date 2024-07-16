@@ -3,7 +3,7 @@ package thing.ground;
 
 import thing.A_Animal;
 import thing.I_SituatedThing;
-import thing.ground.landscape.C_Landscape;
+import thing.ground.landscape.C_LandscapeRodent;
 
 /** Crops are specific landplots that can be ploughed
  * @see C_LandPlot
@@ -16,7 +16,7 @@ public class C_CropLandPlot extends C_LandPlot {
 	//
 	// CONSTRUCTOR
 	//
-	public C_CropLandPlot(C_Landscape groundManager) {
+	public C_CropLandPlot(C_LandscapeRodent groundManager) {
 		super(groundManager);
 	}
 	//

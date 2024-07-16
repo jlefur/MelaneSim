@@ -4,6 +4,8 @@ package thing.ground.landscape;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
+import data.C_ReadRaster;
+import data.C_ReadRasterOcean;
 import data.constants.I_ConstantPNMC_particules;
 import melanesim.protocol.A_Protocol;
 import repast.simphony.context.Context;
@@ -28,6 +30,15 @@ public class C_LandscapeMarine extends C_Landscape implements I_ConstantPNMC_par
 	//
 	public C_LandscapeMarine(Context<Object> context, String url, String gridValueName, String continuousSpaceName) {
 		super(context, url, gridValueName, continuousSpaceName);
+	}
+	@Override
+	/** Read raster in true surfer format LeFur 07.2024 */
+	protected int[][] readRasterFile(String url) {
+		int[][] matriceLue;
+		System.out.println();
+		matriceLue = C_ReadRasterOcean.txtRasterLoader(url);
+		A_Protocol.event("C_LandscapeMarine constructor", "ASCII grid", isNotError);
+		return matriceLue;
 	}
 	//
 	// OVERRIDEN METHODS

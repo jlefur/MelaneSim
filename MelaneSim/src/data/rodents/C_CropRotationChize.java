@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 import melanesim.C_ContextCreator;
 import thing.ground.C_LandPlot;
-import thing.ground.landscape.C_Landscape;
+import thing.ground.landscape.C_LandscapeRodent;
 
 /** @see C_Style2dAffinityType#colorMapChizeGrid
  * @author Jean Le Fur, 2011 */
@@ -24,12 +24,12 @@ public class C_CropRotationChize {
 	private static Map<Integer, String> INITIAL_AFFINITIES = new HashMap<Integer, String>();
 	private static Map<String, double[]> CHIZE_CROP_TRANSITION = new HashMap<String, double[]>();
 	private static Map<String, int[]> MONTHLY_AFFINITIES = new HashMap<String, int[]>();
-	private C_Landscape landscape;
+	private C_LandscapeRodent landscape;
 	//
 	// CONSTRUCTOR
 	//
 	/** monthly change of the farming technical operations */
-	public C_CropRotationChize(C_Landscape landscape) {
+	public C_CropRotationChize(C_LandscapeRodent landscape) {
 		this.landscape = landscape;
 
 		// used to set landPlots type given the affinity read at init (march 2011) - JLF 02.2012

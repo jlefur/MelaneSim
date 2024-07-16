@@ -16,6 +16,7 @@ import thing.I_SituatedThing;
 import thing.dna.C_GenomeAmniota;
 import thing.ground.C_BurrowSystem;
 import thing.ground.I_Container;
+import thing.ground.landscape.C_LandscapeRodent;
 import data.C_Parameters;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
@@ -41,6 +42,11 @@ public abstract class A_ProtocolFossorial extends A_Protocol {
 	//
 	// METHODS
 	//
+	/** The contact structure (term coined from S.E.Page: Diversity and Complexity) */
+	protected void initLandscape(Context<Object> context) {
+		this.setLandscape(new C_LandscapeRodent(context, C_Parameters.RASTER_URL, VALUE_LAYER_NAME, CONTINUOUS_SPACE_NAME));
+	}
+
 	/** Randomly add burrows and randomly put RodentAgents in them */
 	protected void initPopulations() {
 		// add burrow systems and agents within

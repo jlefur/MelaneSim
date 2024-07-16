@@ -24,7 +24,7 @@ import thing.ground.C_SoilCellUrban;
  * @author Baduel 2009.04, Le Fur 2009.12, Longueville 2011.02, Le Fur 02.2011, 07.2012, 04.2015<br>
  *         rev. JLF 10.2015, 11.2015 - was formerly C_Raster <br>
  *         TODO JLF 2020.04 Should be normally in ground package */
-public class C_LandscapeUrban extends C_Landscape implements I_ConstantDodel2 {
+public class C_LandscapeUrban extends C_LandscapeRodent implements I_ConstantDodel2 {
 	//
 	// CONSTRUCTOR
 	//

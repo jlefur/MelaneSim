@@ -25,7 +25,7 @@ import melanesim.util.C_Graph;
  * @see melanesim.util.C_Graph
  * @see thing.ground.C_SoilCellGraphed
  * @author Mboup 05/08/2012, rev. JLF 10.2015, was formerly C_RasterGraph */
-public class C_LandscapeNetwork extends C_Landscape {
+public class C_LandscapeNetwork extends C_LandscapeRodent {
 	//
 	// FIELDS
 	//

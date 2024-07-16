@@ -5,18 +5,18 @@ import java.util.Map;
 import java.util.TreeSet;
 
 import thing.ground.C_LandPlot;
-import thing.ground.landscape.C_Landscape;
+import thing.ground.landscape.C_LandscapeRodent;
 
 /** @author Malick Diakhate, 2014, rev. JLF 10.2014 */
 public class C_CircadianAffinitiesMus {
 
 	private static Map<Integer, String> INITIAL_AFFINITIES_MUS = new HashMap<Integer, String>();
 	private static Map<String, int[]> HOURLY_AFFINITIES = new HashMap<String, int[]>();
-	private C_Landscape landscape;
+	private C_LandscapeRodent landscape;
 
 	// CONSTRUCTOR
 	/** hourly change of the danger in areas */
-	public C_CircadianAffinitiesMus(C_Landscape landscape) {
+	public C_CircadianAffinitiesMus(C_LandscapeRodent landscape) {
 		this.landscape = landscape;
 		
 		// used to set landPlots type given the affinity read at init

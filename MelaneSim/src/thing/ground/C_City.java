@@ -4,7 +4,7 @@ import java.util.TreeSet;
 import data.constants.rodents.I_ConstantTransportation;
 import thing.C_HumanCarrier;
 import thing.I_SituatedThing;
-import thing.ground.landscape.C_Landscape;
+import thing.ground.landscape.C_LandscapeRodent;
 import melanesim.protocol.A_Protocol;
 
 /** a city owns a population size, it also take part of several graphs?
@@ -17,7 +17,7 @@ public class C_City extends C_LandPlot implements I_ConstantTransportation {
 	//
 	// CONSTRUCTOR
 	//
-	public C_City(C_Landscape groundManager) {
+	public C_City(C_LandscapeRodent groundManager) {
 		super(groundManager);
 		this.setHumanPopSize_Uindividual(DEFAULT_HAMLET_SIZE_Uindividual);
 	}

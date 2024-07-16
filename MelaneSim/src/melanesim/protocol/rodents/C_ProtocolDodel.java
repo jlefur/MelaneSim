@@ -14,6 +14,7 @@ import thing.dna.C_GenomeAmniota;
 import thing.dna.species.rodents.C_GenomeMusMusculus;
 import thing.ground.C_SoilCell;
 import thing.ground.I_Container;
+import thing.ground.landscape.C_LandscapeRodent;
 import data.C_Parameters;
 import data.constants.rodents.I_ConstantStringRodents;
 import data.rodents.C_CircadianAffinitiesMus;
@@ -43,11 +44,15 @@ public class C_ProtocolDodel extends A_Protocol implements I_ConstantStringRoden
 		this.geneticInspector = new C_InspectorGenetic();
 		this.inspectorList.add(geneticInspector);
 		C_CustomPanelSet.addGeneticInspector(geneticInspector);
-		this.circadianAffinities = new C_CircadianAffinitiesMus(this.landscape);
+		this.circadianAffinities = new C_CircadianAffinitiesMus((C_LandscapeRodent) this.landscape);
 	}
 	//
 	// METHODS
 	//
+	/** The contact structure (term coined from S.E.Page: Diversity and Complexity) */
+	protected void initLandscape(Context<Object> context) {
+		this.setLandscape(new C_LandscapeRodent(context, C_Parameters.RASTER_URL, VALUE_LAYER_NAME, CONTINUOUS_SPACE_NAME));
+	}
 	@Override
 	public void readUserParameters() {
 		boolean oldValueBlackMap = C_Parameters.BLACK_MAP;

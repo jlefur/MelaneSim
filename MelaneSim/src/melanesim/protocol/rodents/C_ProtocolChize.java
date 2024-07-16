@@ -15,6 +15,7 @@ import thing.C_RodentFossorial;
 import thing.dna.species.rodents.C_GenomeMicrotusArvalis;
 import thing.ground.C_LandPlot;
 import thing.ground.C_SoilCell;
+import thing.ground.landscape.C_LandscapeRodent;
 import data.C_Parameters;
 import data.rodents.C_CropRotationChize;
 import melanesim.protocol.A_Protocol;
@@ -42,7 +43,7 @@ public class C_ProtocolChize extends A_ProtocolFossorial {
 		C_UserPanel.addGeneticInspector(geneticInspector);
 		
 		
-		cropRotation = new C_CropRotationChize(this.landscape);
+		cropRotation = new C_CropRotationChize((C_LandscapeRodent) this.landscape);
 		// Position crop at the barycentre of cells
 		for (C_LandPlot lp : this.landscape.getAffinityLandPlots()) {
 			double xx = 0., yy = 0.;

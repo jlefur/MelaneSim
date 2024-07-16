@@ -18,19 +18,17 @@ import java.util.StringTokenizer;
 
 import javax.imageio.ImageIO;
 
-import data.constants.I_ConstantPNMC_particules;
+//import data.constants.I_ConstantPNMC_particules;
 import thing.ground.landscape.C_Landscape;
 
 /** Two utilities to read either an ASCII or bitmap raster and return a grid in SimMasto format (the image must be in grey levels
  * or in 256 or less)
  * @see C_Landscape
  * @author Quentin Baduel, 2008, rev. JLF 10.2015 */
-public class C_ReadRaster implements I_ConstantPNMC_particules {
+public class C_ReadRaster {
 	/** Download grid in ASCII text format : 1st line "DSAA" <br>
 	 * FOR RODENTS RASTERS: 2nd line number of rows 3rd line number of columns 4th line min and max values remaining: line 0:
 	 * column 0 to j-1 (delimiter blank space) line i line i-1 <br>
-	 * FOR OCEAN RASTERS (compatible surfer): 2nd line number of columns number of rows / 3rd line min and max x / 4th line min
-	 * and max y / 5th line: min and max of values / remaining: line 0: column 0 to j-1 (delimiter blank space) line i line i-1
 	 * @param url
 	 * @return matrix of affinities (or whatever) */
 	public static int[][] txtRasterLoader(String url) {
@@ -48,17 +46,10 @@ public class C_ReadRaster implements I_ConstantPNMC_particules {
 			lecteur.readLine();// DSAA
 			int largeur, hauteur;
 			st = new StringTokenizer(lecteur.readLine());
-			if (C_Parameters.PROTOCOL.equals(PNMC_PK)) {
-				largeur = Integer.parseInt((st.nextToken()));
-				hauteur = Integer.parseInt((st.nextToken()));
-					lecteur.readLine();
-					lecteur.readLine();
-				}
-			else {// Rodents case
-				largeur = Integer.parseInt(st.nextToken());
-				st = new StringTokenizer(lecteur.readLine());
-				hauteur = Integer.parseInt(st.nextToken());
-			}
+			// Rodents case
+			largeur = Integer.parseInt(st.nextToken());
+			st = new StringTokenizer(lecteur.readLine());
+			hauteur = Integer.parseInt(st.nextToken());
 			matrice = new int[largeur][hauteur];
 			lecteur.readLine();
 			int i = 0;
@@ -70,8 +61,8 @@ public class C_ReadRaster implements I_ConstantPNMC_particules {
 				// ... tant qu'elle a des éléments
 				while (st.hasMoreElements()) {
 					// on lit l'entier correspondant et on l'enregistre dans la matrice.
-					matrice[j][i] = Integer.parseInt((st.nextToken())); // OCEAN
-					// matrice[j][hauteur - i - 1] = Integer.parseInt((st.nextToken())); // RODENTS
+					// matrice[j][i] = Integer.parseInt((st.nextToken())); // OCEAN
+					matrice[j][hauteur - i - 1] = Integer.parseInt((st.nextToken())); // RODENTS
 					j++;
 				}
 				j = 0;

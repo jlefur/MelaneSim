@@ -20,8 +20,6 @@ import data.C_ReadRaster;
 import data.constants.I_ConstantString;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
-import presentation.epiphyte.C_InspectorOrnithodorosSonrai;
-import presentation.epiphyte.C_InspectorPopulation;
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
@@ -35,8 +33,6 @@ import repast.simphony.valueLayer.GridValueLayer;
 import thing.A_Animal;
 import thing.A_Organism;
 import thing.A_VisibleAgent;
-import thing.C_OrnitodorosSonrai;
-import thing.C_Rodent;
 import thing.I_SituatedThing;
 import thing.dna.I_DiploidGenome;
 import thing.ground.C_LandPlot;
@@ -66,20 +62,10 @@ public class C_Landscape implements I_ConstantString {
 	//
 	// CONSTRUCTOR
 	//
-	/** Constructor of grid ground : creates a gridValueLayer with values (affinity); an equivalent matrix with field agents, a
+/** Constructor of grid ground : creates a gridValueLayer with values (affinity); an equivalent matrix with field agents, a
 	 * continuous space where agents have real coordinates. Retrieves also for that the user parameters provided within the GUI */
 	public C_Landscape(Context<Object> context, String url, String gridValueName, String continuousSpaceName) {
-		// READ RASTER FILE
-		int[][] matriceLue;
-		if (RASTER_MODE.compareTo("ascii") == 0) {
-			System.out.println();
-			matriceLue = C_ReadRaster.txtRasterLoader(url);
-			A_Protocol.event("C_Landscape constructor", "ASCII grid", isNotError);
-		}
-		else {
-			matriceLue = C_ReadRaster.imgRasterLoader(url);
-			A_Protocol.event("C_Landscape constructor", "bitmap", isNotError);
-		}
+		int[][] matriceLue = readRasterFile(url);
 		// IDENTIFY DIMENSIONS
 		this.dimension_Ucell = new Dimension(matriceLue.length, matriceLue[0].length);
 		A_Protocol.event("C_Landscape constructor", "dimensions dim-ucell: width = " + dimension_Ucell.width
@@ -106,7 +92,20 @@ public class C_Landscape implements I_ConstantString {
 		// Fill both (!) gridValueLayer and C_SoilCell matrices with the value read in the raster
 		this.createGround(matriceLue);
 	}
-	public C_Landscape(Context<Object> context, String[] urlList, String gridValueName, String continuousSpaceName) {}
+	protected int[][] readRasterFile(String url){
+		// READ RASTER FILE
+		int[][] matriceLue;
+		if (RASTER_MODE.compareTo("ascii") == 0) {
+			System.out.println();
+			matriceLue = C_ReadRaster.txtRasterLoader(url);
+			A_Protocol.event("C_Landscape constructor", "ASCII grid", isNotError);
+		}
+		else {
+			matriceLue = C_ReadRaster.imgRasterLoader(url);
+			A_Protocol.event("C_Landscape constructor", "bitmap", isNotError);
+		}
+		return matriceLue;
+	}
 	//
 	// METHODS
 	//
@@ -133,13 +132,6 @@ public class C_Landscape implements I_ConstantString {
 		parent.getCurrentSoilCell().agentIncoming(child);
 		Context<Object> context = ContextUtils.getContext(parent);
 		context.add(child);
-		// TODO JLF 2015.10 epiphyte in business, move to protocol ?
-		if (child instanceof C_Rodent) C_InspectorPopulation.addRodentToBirthList((C_Rodent) child);
-		// TODO MS 2020.04 Add birth tick in the corresponding inspector list!
-		// TODO MS de JLF 2022.01 reference to OrnitodorosSonrai misplaced + epiphyte in business, move to protocol ?
-		else
-			if (child instanceof C_OrnitodorosSonrai)
-				C_InspectorOrnithodorosSonrai.addTickBirthList((C_OrnitodorosSonrai) child);
 		continuousSpace.moveTo(child, new_location);
 		child.bornCoord_Umeter = getThingCoord_Umeter(child);
 	}
@@ -353,8 +345,7 @@ public class C_Landscape implements I_ConstantString {
 		incomer.hasToSwitchFace = true;
 		incomer.setAge_Uday(animalLeavingLandscape.getAge_Uday());
 		context.add(incomer);
-		// JLF 2016.05 cannot add rodent to birthList since it has age of sexual maturity (see above) ?
-		if (incomer instanceof C_Rodent) C_InspectorPopulation.addRodentToList((C_Rodent) incomer);
+		updateInspectors(incomer);
 		continuousSpace.moveTo(incomer, newLocation);
 		grid[x][y].agentIncoming(incomer);
 		incomer.bornCoord_Umeter = getThingCoord_Umeter(incomer);
@@ -373,6 +364,10 @@ public class C_Landscape implements I_ConstantString {
 							.getCurrentSoilCell().retrieveColNo() + " / " + incomer + " enters at " + x + "," + y,
 					isNotError);
 	}
+	
+	
+	protected void updateInspectors(A_Animal incomer) {}
+
 	/** Scan all SoilCells and allocate them to a given landPlot, create a new one each time it changes. <br />
 	 * This method doesn't update old landPlots but it builds new ones. And old ones remain in the context. <br />
 	 * If necessary, it is possible to "update" the old see (C_RasterGraphManager.identifyTypeLandPlots()).<br />

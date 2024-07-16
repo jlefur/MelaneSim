@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 import data.constants.rodents.I_ConstantMusTransport;
 import melanesim.protocol.A_Protocol;
-import thing.ground.landscape.C_Landscape;
+import thing.ground.landscape.C_LandscapeRodent;
 
 /** A market get its population grow the market day. Implemented for Mus transport protocol */
 public class C_Market extends C_City implements I_ConstantMusTransport {
@@ -15,7 +15,7 @@ public class C_Market extends C_City implements I_ConstantMusTransport {
 	//
 	// CONSTRUCTOR
 	//
-	public C_Market(C_Landscape groundManager) {
+	public C_Market(C_LandscapeRodent groundManager) {
 		super(groundManager);
 	}
 	//

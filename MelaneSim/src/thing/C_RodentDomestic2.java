@@ -18,6 +18,7 @@ import thing.ground.C_SoilCell;
 import thing.ground.C_SoilCellUrban;
 import thing.ground.I_Container;
 import thing.ground.landscape.C_Landscape;
+import thing.ground.landscape.C_LandscapeRodent;
 
 /** Rodent agents that are used to live within cities buildings and can interact with different agents like humans, cats,
  * bacterias and ticks <br>
