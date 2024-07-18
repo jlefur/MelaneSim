@@ -4,7 +4,6 @@ package thing.ground.landscape;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import data.C_Parameters;
-import data.C_ReadRaster;
 import data.C_ReadRasterOcean;
 import data.constants.I_ConstantPNMC_particules;
 import melanesim.protocol.A_Protocol;
