@@ -34,7 +34,7 @@ public interface I_ConstantPNMC_particules extends I_ConstantString {
 	public static final String CURRENT_EVENT = "current";
 	// Others
 	public static final int BACKGROUND_COLOR = 38;
-	public static final int TERRESTRIAL_MIN_AFFINITY = 7;
+	public static final int TERRESTRIAL_MIN_AFFINITY = 8;
 	public static final int PLANKTON_CELLS_SPACING = 1; // interval where to post plankton cells see protocol.initpopulations
 	public static final int BACKWARD_NB_CELLS = 1;// if particle reach bordure move back nb cells
 }

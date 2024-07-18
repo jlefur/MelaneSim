@@ -12,6 +12,7 @@ import repast.simphony.context.Context;
 import repast.simphony.space.continuous.NdPoint;
 import thing.A_VisibleAgent;
 import thing.ground.C_MarineCell;
+import thing.ground.I_Container;
 
 /** The global container of MelaneSim's protocols<br>
  * Owns a continuous space and a grid/matrix with values ('affinity'), landplots of marine cells with the same affinity values.
@@ -68,17 +69,21 @@ public class C_LandscapeMarine extends C_Landscape implements I_ConstantPNMC_par
 		if (!this.checkBordure(thingLocation_Ucs, moveDistance_Ucs, thing)) {
 			// Move the agent by mean of the projection's methods
 			this.continuousSpace.moveByDisplacement(thing, moveDistance_Ucs.x, moveDistance_Ucs.y);
+//			this.continuousSpace.moveTo(thing, thingLocation_Ucs.getX()+moveDistance_Ucs.x, thingLocation_Ucs.getY()+moveDistance_Ucs.y);
 			this.checkAndMoveToNewCell(thing);
 		}
 	}
+
 	/** Adapted from C_Landscape.checkGoalPosition<br>
 	 * Check next position and backward if leaving the continuous space.
 	 * @param currentPosition_Ucs
 	 * @param moveDistance_Ucs
-	 * @return true if agent has to leave domain */
+	 * @return true if agent is washed on shore or has to leave domain */
 	protected boolean checkBordure(NdPoint currentPosition_Ucs, Coordinate moveDistance_Ucs, A_VisibleAgent agent) {
 		NdPoint goalPoint_Ucs = new NdPoint(currentPosition_Ucs.getX() + moveDistance_Ucs.x, currentPosition_Ucs.getY()
 				+ moveDistance_Ucs.y);
+
+		// if leave world get back BACKWARD_NB_CELLS
 		int ix = agent.getCurrentSoilCell().retrieveLineNo();
 		int iy = agent.getCurrentSoilCell().retrieveColNo();
 		// we test the four cases where the agent is going out back one cell if it is the case
@@ -102,6 +107,19 @@ public class C_LandscapeMarine extends C_Landscape implements I_ConstantPNMC_par
 			this.moveToLocation(agent, this.grid[ix][iy - BACKWARD_NB_CELLS].getCoordinate_Ucs());
 			return true;
 		}
+
+		// Do not transport particles to earth ground
+		double a = goalPoint_Ucs.getX(), b = goalPoint_Ucs.getY();
+		I_Container goalCell = this.grid[(int) a][(int) b];
+		// I_Container newCell = grid[(int) getThingCoord_Ucell(thing).x][(int) getThingCoord_Ucell(thing).y];
+		if (goalCell instanceof C_MarineCell) {// security
+			double speed = ((C_MarineCell) goalCell).getSpeedEastward_UmeterPerSecond() + ((C_MarineCell) goalCell)
+					.getSpeedNorthward_UmeterPerSecond();
+			if (speed == 0) {
+				return true; }
+		}
+		else System.err.println("C_LandscapeMarine.checkBordure(): " + goalCell + " is not a marine cell");
+
 		return false;
 	}
 }

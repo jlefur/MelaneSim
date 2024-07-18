@@ -193,14 +193,14 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 			for (int i = 0; i < imax; i++) {
 				for (int j = 0; j < jmax; j++) {
 					double value = matriceLue[i][j];
-					((C_MarineCell) this.landscape.getGrid()[i][j]).setCurrentEastward_UmeterPerSecond(value);
+					((C_MarineCell) this.landscape.getGrid()[i][j]).setSpeedEastward_UmeterPerSecond(value);
 				}
 			}
 			matriceLue = C_ReadRasterDouble.doubleRasterLoader(url + "_North.grd");
 			for (int i = 0; i < imax; i++) {
 				for (int j = 0; j < jmax; j++) {
 					double value = matriceLue[i][j];
-					((C_MarineCell) this.landscape.getGrid()[i][j]).setCurrentNorthward_UmeterPerSecond(value);
+					((C_MarineCell) this.landscape.getGrid()[i][j]).setSpeedNorthward_UmeterPerSecond(value);
 				}
 			}
 			break;
