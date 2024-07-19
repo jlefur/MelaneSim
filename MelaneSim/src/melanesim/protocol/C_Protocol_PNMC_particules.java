@@ -1,6 +1,8 @@
 package melanesim.protocol;
 
+import java.awt.*;
 import java.util.Calendar;
+import java.util.Random;
 import java.util.TimeZone;
 
 import com.vividsolutions.jts.geom.Coordinate;
@@ -33,6 +35,7 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 	// FIELDS
 	//
 	private C_ConvertGeographicCoordinates geographicCoordinateConverter = null;
+	Random random = new Random();
 
 	//
 	// CONSTRUCTOR
@@ -146,10 +149,24 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 	 * Version Authors JEL2011, AR2011, rev. LeFur 2011,2012,2014,2024
 	 */
 	public void manageTimeLandmarks() {
+
+		try {
+			Robot robot = new Robot();
+			// Obtient les coordonnées actuelles de la souris
+			Point mouseLocation = MouseInfo.getPointerInfo().getLocation();
+			int x = mouseLocation.x;
+			int y = mouseLocation.y;
+
+			// Déplace la souris légèrement de façon aléatoire
+			robot.mouseMove(x + random.nextInt(3), y + random.nextInt(3));
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
 		// save screen each new day
+		Integer currentYear = A_Protocol.protocolCalendar.get(Calendar.YEAR);
 		Integer currentDay = A_Protocol.protocolCalendar.get(Calendar.DAY_OF_YEAR);
 		Integer currentHour = A_Protocol.protocolCalendar.get(Calendar.HOUR_OF_DAY);
-		String currentDate = String.format("%03d", currentDay) + "-" + String.format("%03d", currentHour);
+		String currentDate = currentYear+"."+String.format("%03d", currentDay) + "_" + String.format("%03d", currentHour);
 		A_Protocol.protocolCalendar.incrementDate();
 		// if (protocolCalendar.get(Calendar.DAY_OF_YEAR) != currentDay)
 		CaptureEcranPeriodique.captureEcranPlankton(currentDate);
@@ -184,10 +201,10 @@ public class C_Protocol_PNMC_particules extends A_Protocol implements I_Constant
 			// Month of simulation begin in 0, we need to +1 the month value and put 0
 			// before month value between 0 and 8
 			if (calendar.get(Calendar.MONTH) < 9)
-				url = RASTER_PATH_MELANESIA + "PNMC_current_2021/" + calendar.get(Calendar.YEAR) + "0"
-						+ (calendar.get(Calendar.MONTH) + 1);
+				url = RASTER_PATH_MELANESIA + "PNMC_current_2021/2021"// + calendar.get(Calendar.YEAR)
+						+ "0" + (calendar.get(Calendar.MONTH) + 1);
 			else
-				url = RASTER_PATH_MELANESIA + "PNMC_current_2021/" + calendar.get(Calendar.YEAR)
+				url = RASTER_PATH_MELANESIA + "PNMC_current_2021/2021"// + calendar.get(Calendar.YEAR)
 						+ (calendar.get(Calendar.MONTH) + 1);
 			double[][] matriceLue = C_ReadRasterDouble.doubleRasterLoader(url + "_East.grd");
 			for (int i = 0; i < imax; i++) {
