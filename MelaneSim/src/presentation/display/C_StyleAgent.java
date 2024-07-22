@@ -61,7 +61,7 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 
 	public void initPNMC() {
 		this.ELLIPSE_SCALE = 2.8f;
-		this.imageScale = 1.f;
+		this.imageScale = .07f;
 		factory.registerImage(PLANKTON_ICON, selectImg.loadImage(PLANKTON_ICON));
 		factory.registerImage(TAGGED, selectImg.loadImage(TAGGED));
 	}
@@ -284,6 +284,12 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 				return (float) (energy * .1);
 		}
 		if (C_Parameters.IMAGE) {
+			if (object instanceof C_Plankton) {
+				C_MarineCell cell = (C_MarineCell) object.getCurrentSoilCell();
+				// TODO number in source JLF 2024.07 taille cellule plancton
+				float size = this.imageScale + (float) (cell.getOccupantList().size() *.001);
+				return size;
+			}
 			if (object instanceof A_Organism) {
 				if (((A_Organism) object).isa_Tag()) return this.imageScale * 5;
 			}
@@ -294,12 +300,6 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 				else return this.imageScale / 2;
 			}
 			else return this.imageScale;
-		}
-		if (object instanceof C_Plankton && C_Parameters.VERBOSE) {
-			C_MarineCell cell = (C_MarineCell) object.getCurrentSoilCell();
-			float size = this.ELLIPSE_SCALE + (float) (cell.getOccupantList().size() / 20.);// TODO number in source JLF 2024.07
-																							// taille cellule plancton
-			return size;
 		}
 		// Show (badly) the relative importance of agents sensing
 		// else if (object instanceof A_Animal) return (float) (this.ELLIPSE_SCALE * ((A_Animal) object).getSensing_UmeterByTick()
