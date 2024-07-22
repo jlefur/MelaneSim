@@ -20,9 +20,11 @@ import thing.A_Animal;
 import thing.A_NDS;
 import thing.A_Organism;
 import thing.A_VisibleAgent;
+import thing.C_Plankton;
 import thing.A_HumanUrban;
 import thing.C_Vegetation;
 import thing.I_SituatedThing;
+import thing.ground.C_MarineCell;
 
 /** Style des agents "animaux". Définit une icône ou une ellipse pour chaque agent au lancement de la simulation en fonction de
  * son sexe et la fait varier suivant son âge.
@@ -292,6 +294,12 @@ public class C_StyleAgent implements StyleOGL2D<I_SituatedThing>, I_ConstantStri
 				else return this.imageScale / 2;
 			}
 			else return this.imageScale;
+		}
+		if (object instanceof C_Plankton && C_Parameters.VERBOSE) {
+			C_MarineCell cell = (C_MarineCell) object.getCurrentSoilCell();
+			float size = this.ELLIPSE_SCALE + (float) (cell.getOccupantList().size() / 20.);// TODO number in source JLF 2024.07
+																							// taille cellule plancton
+			return size;
 		}
 		// Show (badly) the relative importance of agents sensing
 		// else if (object instanceof A_Animal) return (float) (this.ELLIPSE_SCALE * ((A_Animal) object).getSensing_UmeterByTick()

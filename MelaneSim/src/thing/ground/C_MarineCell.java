@@ -32,18 +32,22 @@ public class C_MarineCell extends C_SoilCell implements I_ConstantPNMC_particule
 	/** Move planktonic occupants with the surface current speed - JLF 07.2024 */
 	public void step_Utick() {
 		super.step_Utick();
+		double speedEastward_UmeterPerTick, speedNorthward_UmeterPerTick, energy;
 		if (this.speedEastward_UmeterPerSecond + this.speedNorthward_UmeterPerSecond == 0.) return;
 		else {
 			TreeSet<I_SituatedThing> occupants = new TreeSet<>(this.getOccupantList());
-			//Object[] occupants = this.getOccupantList().toArray();// To avoid concurrent exception
+			// Object[] occupants = this.getOccupantList().toArray();// To avoid concurrent exception
 			for (I_SituatedThing agent : occupants) {
 				if (agent instanceof C_Plankton) {
-					double currentSpeedEastward_UmeterPerTick = C_ConvertTimeAndSpace.convertSpeed_UspaceByTick(
+					speedEastward_UmeterPerTick = C_ConvertTimeAndSpace.convertSpeed_UspaceByTick(
 							this.speedEastward_UmeterPerSecond, "m", "s");
-					double currentSpeedNorthward_UmeterPerTick = C_ConvertTimeAndSpace.convertSpeed_UspaceByTick(
+					speedNorthward_UmeterPerTick = C_ConvertTimeAndSpace.convertSpeed_UspaceByTick(
 							this.speedNorthward_UmeterPerSecond, "m", "s");
+					energy = Math.sqrt(speedEastward_UmeterPerTick * speedEastward_UmeterPerTick
+							+ speedNorthward_UmeterPerTick * speedNorthward_UmeterPerTick)/1E3;// TODO number in source JLF 2024 (energy = speed /1E3)
 					A_VisibleAgent.myLandscape.translate((A_VisibleAgent) agent, new Coordinate(
-							currentSpeedEastward_UmeterPerTick, currentSpeedNorthward_UmeterPerTick));
+							speedEastward_UmeterPerTick, speedNorthward_UmeterPerTick));
+					((C_Plankton) agent).energy_Ukcal += energy;
 				}
 			}
 		}
