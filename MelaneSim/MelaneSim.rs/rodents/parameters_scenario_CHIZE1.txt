@@ -78,5 +78,5 @@
 	
 	<repast.simphony.userpanel.ui.DefaultUserPanelDescriptorAction context="SIMmasto0" file="repast.simphony.userpanel.ui.DefaultUserPanelDescriptorAction_0.xml" />
 	
-	<model.initializer class="presentation.display.C_CustomPanelSet" />
+	<model.initializer class="presentation.display.C_CustomPanelSet_Rodent" />
 </Scenario>

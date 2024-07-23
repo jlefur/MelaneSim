@@ -4,7 +4,10 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import presentation.display.C_CustomPanelSet;
+import data.C_Parameters;
+import melanesim.C_ContextCreator;
+import melanesim.protocol.A_Protocol;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.display.C_UserPanel;
 import presentation.epiphyte.C_InspectorFossorialRodents;
 import presentation.epiphyte.C_InspectorPopulation;
@@ -17,9 +20,6 @@ import thing.dna.C_GenomeAmniota;
 import thing.ground.C_BurrowSystem;
 import thing.ground.I_Container;
 import thing.ground.landscape.C_LandscapeRodent;
-import data.C_Parameters;
-import melanesim.C_ContextCreator;
-import melanesim.protocol.A_Protocol;
 
 /** author J.Le Fur, A.Comte 03.2012 / J.Le Fur 07.2012, 07.2013, 02.2014, 04.2020 */
 
@@ -36,7 +36,7 @@ public abstract class A_ProtocolFossorial extends A_Protocol {
 		super(ctxt);// Init parameters, raster ground and higher level inspectors & displays
 		burrowInspector = new C_InspectorFossorialRodents();
 		inspectorList.add(burrowInspector);
-		C_CustomPanelSet.addBurrowInspector(burrowInspector);
+		C_CustomPanelSet_Rodent.addBurrowInspector(burrowInspector);
 		C_UserPanel.addBurrowInspector(burrowInspector);
 	}
 	//

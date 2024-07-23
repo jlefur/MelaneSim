@@ -9,7 +9,7 @@ import data.constants.rodents.I_ConstantDecenal;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.protocol.A_ProtocolTransportation;
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.epiphyte.C_InspectorGenetic;
 import repast.simphony.context.Context;
 import thing.C_Rodent;
@@ -29,7 +29,7 @@ public class C_ProtocolDecenal extends A_ProtocolTransportation implements I_Con
 		super(ctxt);
 		geneticInspector = new C_InspectorGenetic();
 		inspectorList.add(geneticInspector);
-		C_CustomPanelSet.addGeneticInspector(geneticInspector);
+		C_CustomPanelSet_Rodent.addGeneticInspector(geneticInspector);
 		facilityMap = new C_Background(-.45, 83, 75);
 		// Create and build the dataFromChrono from the csv file
 		chronogram = new C_Chronogram(I_ConstantDecenal.CHRONO_FILENAME);

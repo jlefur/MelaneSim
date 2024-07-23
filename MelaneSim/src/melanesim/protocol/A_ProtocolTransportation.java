@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.epiphyte.C_InspectorTransportation;
 import repast.simphony.context.Context;
 import repast.simphony.essentials.RepastEssentials;
@@ -43,7 +43,7 @@ public abstract class A_ProtocolTransportation extends A_Protocol implements I_C
 		this.facilityMap = new C_Background(-.46, 44, 31);
 		this.inspectorTransportation = new C_InspectorTransportation();
 		this.inspectorList.add(inspectorTransportation);
-		C_CustomPanelSet.addTransportationInspector(inspectorTransportation);
+		C_CustomPanelSet_Rodent.addTransportationInspector(inspectorTransportation);
 	}
 	//
 	// METHODS

@@ -8,7 +8,7 @@ import data.C_Event;
 import data.C_Parameters;
 import melanesim.protocol.A_Protocol;
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.display.C_UserPanel;
 import presentation.epiphyte.C_InspectorCMR;
 import presentation.epiphyte.C_InspectorGenetic;
@@ -42,8 +42,8 @@ public class C_ProtocolBandia extends A_ProtocolFossorial implements data.consta
 		this.C_InspectorCMR = new C_InspectorCMR();
 		this.inspectorList.add(geneticInspector);
 		this.inspectorList.add(C_InspectorCMR);
-		C_CustomPanelSet.addCMRInspector(C_InspectorCMR);
-		C_CustomPanelSet.addGeneticInspector(geneticInspector);
+		C_CustomPanelSet_Rodent.addCMRInspector(C_InspectorCMR);
+		C_CustomPanelSet_Rodent.addGeneticInspector(geneticInspector);
 		C_UserPanel.addGeneticInspector(geneticInspector);
 	}
 	//

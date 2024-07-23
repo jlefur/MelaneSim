@@ -4,7 +4,7 @@ package melanesim.protocol.rodents;
 import java.util.Calendar;
 
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.epiphyte.C_InspectorGenetic;
 import repast.simphony.context.Context;
 import thing.C_Rodent;
@@ -43,7 +43,7 @@ public class C_ProtocolDodel extends A_Protocol implements I_ConstantStringRoden
 
 		this.geneticInspector = new C_InspectorGenetic();
 		this.inspectorList.add(geneticInspector);
-		C_CustomPanelSet.addGeneticInspector(geneticInspector);
+		C_CustomPanelSet_Rodent.addGeneticInspector(geneticInspector);
 		this.circadianAffinities = new C_CircadianAffinitiesMus((C_LandscapeRodent) this.landscape);
 	}
 	//

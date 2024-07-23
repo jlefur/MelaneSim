@@ -5,7 +5,7 @@ import java.util.Calendar;
 import com.vividsolutions.jts.geom.Coordinate;
 
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.display.C_UserPanel;
 import presentation.epiphyte.C_InspectorEnergy;
 import presentation.epiphyte.C_InspectorGenetic;
@@ -39,7 +39,7 @@ public class C_ProtocolChize extends A_ProtocolFossorial {
 		super(ctxt);
 		geneticInspector = new C_InspectorGenetic();
 		inspectorList.add(geneticInspector);
-		C_CustomPanelSet.addGeneticInspector(geneticInspector);
+		C_CustomPanelSet_Rodent.addGeneticInspector(geneticInspector);
 		C_UserPanel.addGeneticInspector(geneticInspector);
 		
 		
