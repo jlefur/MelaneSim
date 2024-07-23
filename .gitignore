@@ -1,3 +1,4 @@
 *.class
 MelaneSim/launchers/MelaneSim Model.launch
 MelaneSim/Repast.settings
+MelaneSim/velocity.log
