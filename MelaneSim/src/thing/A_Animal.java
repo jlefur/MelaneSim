@@ -11,7 +11,6 @@ import data.constants.I_ConstantNumeric;
 import data.converters.C_ConvertTimeAndSpace;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
-import melanesim.util.C_PathWanderer;
 import melanesim.util.C_VariousUtilities;
 import thing.dna.C_GenomeAnimalia;
 import thing.dna.C_GenomeEucaryote;
@@ -19,8 +18,6 @@ import thing.dna.I_DiploidGenome;
 import thing.dna.species.C_GenomeBorrelia;
 import thing.ground.A_Container;
 import thing.ground.A_SupportedContainer;
-import thing.ground.C_SoilCell;
-import thing.ground.C_SoilCellGraphed;
 import thing.ground.I_Container;
 import thing.ground.landscape.C_Landscape;
 

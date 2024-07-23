@@ -11,6 +11,10 @@ import thing.I_SituatedThing;
  * @author J.Le Fur, 03.2015, rev. 09.2015 */
 public abstract class A_SupportedContainer extends C_SoilCell {
 	//
+	// FIELD 
+	//
+	protected boolean a_tag = false;
+	//
 	// CONSTRUCTORS
 	//
 	public A_SupportedContainer() {}
@@ -44,5 +48,15 @@ public abstract class A_SupportedContainer extends C_SoilCell {
 	@Override
 	public C_LandPlot getMyLandPlot() {
 		return ((C_SoilCell) this.currentSoilCell).getMyLandPlot();
+	}
+	//
+	// GETTER AND SETTER
+	//
+	public boolean isa_Tag() {
+		return a_tag;
+	}
+	public void seta_Tag(boolean tagged) {
+		this.a_tag = tagged;
+		this.setHasToSwitchFace(true);
 	}
 }

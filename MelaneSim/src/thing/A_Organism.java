@@ -15,7 +15,6 @@ public abstract class A_Organism extends A_SupportedContainer {
 	// FIELDS
 	//
 	protected I_DiploidGenome genome;
-	protected boolean a_tag = false;
 	//
 	// CONSTRUCTOR
 	//
@@ -51,12 +50,5 @@ public abstract class A_Organism extends A_SupportedContainer {
 			else return perception.size();// + " / " + perception.toString();
 		}
 		else return 0;// "NULL";
-	}
-	public boolean isa_Tag() {
-		return a_tag;
-	}
-	public void seta_Tag(boolean tagged) {
-		this.a_tag = tagged;
-		this.setHasToSwitchFace(true);
 	}
 }

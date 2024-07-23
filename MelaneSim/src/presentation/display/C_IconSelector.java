@@ -14,16 +14,15 @@ import data.constants.rodents.I_ConstantStringRodents;
 import melanesim.protocol.A_Protocol;
 import thing.A_Amniote;
 import thing.A_Animal;
+import thing.A_Human;
+import thing.A_HumanUrban;
 import thing.A_NDS;
 import thing.A_Organism;
 import thing.C_BarnOwl;
 import thing.C_Cat;
 import thing.C_Food;
-import thing.A_Human;
 import thing.C_HumanCarrier;
-import thing.A_HumanUrban;
 import thing.C_OrnitodorosSonrai;
-import thing.C_Plankton;
 import thing.C_Rodent;
 import thing.C_RodentGerbil;
 import thing.C_RodentHouseMouse;
@@ -38,6 +37,7 @@ import thing.dna.species.plants.C_GenomePoacea;
 import thing.dna.species.rodents.C_GenomeMastoErythroleucus;
 import thing.dna.species.rodents.C_GenomeMastoNatalensis;
 import thing.dna.species.rodents.C_GenomeMastomys;
+import thing.ground.A_SupportedContainer;
 import thing.ground.C_BurrowSystem;
 import thing.ground.C_Market;
 import thing.ground.C_Nest;
@@ -78,7 +78,7 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantPNMC_p
 		else return getNameOfImageChize(agent);
 	}
 	public String getNameOfImagePNMC(I_SituatedThing agent) {
-		if (agent instanceof A_Organism && ((A_Organism) agent).isa_Tag()) {
+		if (agent instanceof A_SupportedContainer && ((A_SupportedContainer) agent).isa_Tag()) {
 				((A_Organism) agent).setHasToSwitchFace(true);
 				return TAGGED;
 			}

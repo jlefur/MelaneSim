@@ -7,6 +7,7 @@ import melanesim.util.C_VariousUtilities;
 import repast.simphony.engine.environment.RunState;
 import repast.simphony.essentials.RepastEssentials;
 import thing.A_Organism;
+import thing.ground.A_SupportedContainer;
 
 /** Retrieves mean energy for each species in the context J.Le Fur 02.2018 */
 public class C_InspectorEnergy extends A_Inspector {
@@ -49,17 +50,17 @@ public class C_InspectorEnergy extends A_Inspector {
 		this.sizeBySpecies.clear();
 		for (int i = 0; i < contextContent.length; i++) {
 			Object item = contextContent[i];
-			if (item instanceof A_Organism) {
+			if (item instanceof A_SupportedContainer) {
 				speciesName = C_VariousUtilities.getShortClassName(item.getClass()).substring(2);
 				// If key exist, add values
 				if (this.EnergyBySpecies.get(speciesName) != null) {
 					this.EnergyBySpecies.put(speciesName, this.EnergyBySpecies.get(speciesName) + //
-							((A_Organism) item).getEnergy_Ukcal());
+							((A_SupportedContainer) item).getEnergy_Ukcal());
 					this.sizeBySpecies.put(speciesName, this.sizeBySpecies.get(speciesName) + 1);
 				}
 				// If not, create an entry and set values
 				else {
-					this.EnergyBySpecies.put(speciesName, ((A_Organism) item).getEnergy_Ukcal());
+					this.EnergyBySpecies.put(speciesName, ((A_SupportedContainer) item).getEnergy_Ukcal());
 					this.sizeBySpecies.put(speciesName, 1);
 				}
 			}
