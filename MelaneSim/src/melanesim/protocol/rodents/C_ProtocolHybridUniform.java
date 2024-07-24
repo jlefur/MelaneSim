@@ -7,7 +7,7 @@ import data.C_Parameters;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.display.C_UserPanel;
 import presentation.epiphyte.C_InspectorFossorialRodents;
 import presentation.epiphyte.C_InspectorGenetic;
@@ -45,10 +45,10 @@ public class C_ProtocolHybridUniform extends A_Protocol {
 		this.inspectorList.add(geneticInspector);
 		// Declare the inspector that stores the lethal alleles causes JLF 02.2013
 		C_GenomeEucaryote.init(hybridInspector);
-		C_CustomPanelSet.addHybridInspector(hybridInspector);
-		C_CustomPanelSet.addGeneticInspector(geneticInspector);
+		C_CustomPanelSet_Rodent.addHybridInspector(hybridInspector);
+		C_CustomPanelSet_Rodent.addGeneticInspector(geneticInspector);
 		C_UserPanel.addGeneticInspector(geneticInspector);
-		C_CustomPanelSet.addBurrowInspector(burrowInspector);
+		C_CustomPanelSet_Rodent.addBurrowInspector(burrowInspector);
 		C_UserPanel.addBurrowInspector(burrowInspector);
 		this.facilityMap = new C_Background(-.13, 25, 31);
 	}

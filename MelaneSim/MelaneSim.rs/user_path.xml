@@ -20,6 +20,7 @@
 		<agents path="../bin, ../bin-groovy" filter="presentation.epiphyte.C_InspectorGenetic" />
 		<agents path="../bin, ../bin-groovy" filter="presentation.epiphyte.C_InspectorCentenal" />
 		<agents path="../bin, ../bin-groovy" filter="presentation.display.C_CustomPanelSet" />
+		<agents path="../bin, ../bin-groovy" filter="presentation.display.C_CustomPanelSet_Rodent" />
 		<agents path="../bin, ../bin-groovy" filter="presentation.display.C_UserPanel" />
 		<agents path="../bin, ../bin-groovy" filter="presentation.display.C_Background" />
 		<agents path="../bin, ../bin-groovy" filter="presentation.display.C_IconNightDay" />

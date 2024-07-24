@@ -19,7 +19,7 @@ import data.converters.C_ConvertGeographicCoordinates;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 //import presentation.epiphyte.C_InspectorEnergy;
 import presentation.epiphyte.C_InspectorVegetation;
 import repast.simphony.context.Context;
@@ -71,7 +71,7 @@ public class C_ProtocolGerbil extends A_ProtocolFossorial implements I_ConstantG
 				}
 			}
 		}
-		C_CustomPanelSet.addVegetationInspector(vegetationInspector);
+		C_CustomPanelSet_Rodent.addVegetationInspector(vegetationInspector);
 	}
 	//
 	// METHODS

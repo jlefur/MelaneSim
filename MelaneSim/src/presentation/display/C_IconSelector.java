@@ -79,7 +79,7 @@ public class C_IconSelector implements I_ConstantStringRodents, I_ConstantPNMC_p
 	}
 	public String getNameOfImagePNMC(I_SituatedThing agent) {
 		if (agent instanceof A_SupportedContainer && ((A_SupportedContainer) agent).isa_Tag()) {
-				((A_Organism) agent).setHasToSwitchFace(true);
+				((A_SupportedContainer) agent).setHasToSwitchFace(true);
 				return TAGGED;
 			}
 			else return PLANKTON_ICON;

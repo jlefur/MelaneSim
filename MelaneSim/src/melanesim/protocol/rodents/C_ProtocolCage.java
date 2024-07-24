@@ -13,7 +13,7 @@ import data.constants.rodents.I_ConstantCage;
 import melanesim.C_ContextCreator;
 import melanesim.protocol.A_Protocol;
 import presentation.display.C_Background;
-import presentation.display.C_CustomPanelSet;
+import presentation.display.C_CustomPanelSet_Rodent;
 import presentation.display.C_UserPanel;
 import presentation.epiphyte.C_InspectorGenetic;
 import presentation.epiphyte.C_InspectorHybrid;
@@ -54,8 +54,8 @@ public class C_ProtocolCage extends A_Protocol implements I_ConstantNumeric, I_C
 		inspectorList.add(hybridInspector);
 		C_GenomeEucaryote.init(hybridInspector);// declares the inspector that stores the lethal alleles causes JLF 02.2013
 		A_Amniote.init(hybridInspector);// declares the inspector that stores the lethal alleles causes JLF 02.2013
-		C_CustomPanelSet.addGeneticInspector(geneticInspector);
-		C_CustomPanelSet.addHybridInspector(hybridInspector);
+		C_CustomPanelSet_Rodent.addGeneticInspector(geneticInspector);
+		C_CustomPanelSet_Rodent.addHybridInspector(hybridInspector);
 		C_UserPanel.addGeneticInspector(geneticInspector);
 		C_UserPanel.addHybridInspector(hybridInspector);
 		this.facilityMap = new C_Background(-.04, 31, 25);
